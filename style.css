@@ -1,0 +1,51 @@
+/*
+Theme Name: Draft
+Theme URI: http://fricardo.com/labs/draft
+Description: A Draft to a new WordPress Theme
+Version: 1.0.0
+Author: Flavio Ricardo (@flavioricardo)
+Author URI: http://www.fricardo.com
+
+License: MIT
+License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+/* Aux */
+
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+	clear: both;
+}
+
+/* CSS da estrutura */
+
+.wrapper {
+	margin: 20px auto;
+	max-width: 940px;
+	padding: 0 20px;
+}
+
+.main {
+	float: left;
+	max-width: 650px;
+}
+
+.sidebar {
+	float: left;
+	max-width: 240px;
+}
+
+.footer {
+	clear: both;
+}
