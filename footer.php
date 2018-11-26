@@ -1,9 +1,9 @@
-		<div class="footer">
-			Powered by WordPress version <?php bloginfo('version'); ?>
-		</div>
+		<footer>
+			Powered by WordPress version <?php bloginfo( 'version' ); ?>
+		</footer>
 
-	</div>
+	</main>
 
-	<?php wp_footer(); ?> 
+	<?php wp_footer(); ?>
 </body>
 </html>

@@ -30,22 +30,23 @@ License URI: http://opensource.org/licenses/mit-license.php
 
 /* CSS da estrutura */
 
-.wrapper {
-	margin: 20px auto;
-	max-width: 940px;
-	padding: 0 20px;
+main {
 }
 
-.main {
-	float: left;
-	max-width: 650px;
+nav .menu ul {
+	height: 2.75rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-.sidebar {
-	float: left;
-	max-width: 240px;
+nav .menu ul li {
+	display: inline-block;
 }
 
-.footer {
+aside {
+}
+
+footer {
 	clear: both;
 }
