@@ -1,51 +1,50 @@
 /*
 Theme Name: Draft
-Theme URI: http://fricardo.com/labs/draft
-Description: A Draft to a new WordPress Theme
+Theme URI: http://encolh.eu/labs/draft
+Description: A draft to a new WordPress Theme, created from scratch to you start your project with a responsive layout with Bootstrap 4.
 Version: 1.0.0
 Author: Flavio Ricardo (@flavioricardo)
-Author URI: http://www.fricardo.com
+Author URI: https://medium.com/@flavioricardo91
 
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 */
 
-/* Aux */
+body {}
 
-.clear:before,
-.clear:after,
-[class*="content"]:before,
-[class*="content"]:after,
-[class*="site"]:before,
-[class*="site"]:after {
-	content: '';
-	display: table;
-}
-
-.clear:after,
-[class*="content"]:after,
-[class*="site"]:after {
-	clear: both;
-}
-
-/* CSS da estrutura */
-
-main {
-}
+main {}
 
 nav .menu ul {
-	height: 2.75rem;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	height: 3.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 1em 0;
 }
 
 nav .menu ul li {
 	display: inline-block;
 }
 
-aside {
+.blog-post h2 {}
+
+.blog-post h2 a {}
+
+aside {}
+
+aside .sidebar-widget li {
+	list-style: none;
 }
+
+aside .sidebar-widget li h3 {}
+
+aside .sidebar-widget li ul {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+aside .sidebar-widget li ul li {}
 
 footer {
 	clear: both;
