@@ -56,8 +56,8 @@
 			</section>
 
 			<nav class="nav d-flex">
-  				<?php wp_nav_menu( array('menu' => '', 'container' => '', 'before' => '', 'after' => '', 'items_wrap' => '%3$s') ); ?>
-  				<div class="search">Search</div>
+  				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '', 'before' => '', 'after' => '', 'menu_class' => 'menu col-md-6 text-left') ); ?>
+  				<?php wp_nav_menu( array('theme_location' => 'social', 'container' => '', 'before' => '', 'after' => '', 'menu_class' => 'menu col-md-6 text-right') ); ?>
 			</nav>
 
 		</header>

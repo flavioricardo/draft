@@ -5,12 +5,6 @@ if (function_exists('add_theme_support'))
     // Add Menu Support
     add_theme_support('menus');
 
-    // Create WP Nav Menus
-    register_nav_menus( array(
-        'primary' => __('Primary Menu', 'draft'),
-        'social' => __('Social Links Menu', 'draft'),
-    ) );
-
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     add_image_size('large', 700, '', true); // Large Thumbnail
@@ -34,6 +28,14 @@ if (function_exists('add_theme_support'))
     // Localisation Support
     load_theme_textdomain(get_template_directory() . '/languages');
 }
+
+// Create WP Nav Menus
+register_nav_menus(
+    array(
+        'primary' => 'Primary Menu',
+        'social' => 'Social Links Menu'
+    )
+);
 
 if (function_exists('register_sidebar'))
 {
