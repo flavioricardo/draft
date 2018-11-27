@@ -54,9 +54,10 @@
 			<section role="banner">
 				<h1><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			</section>
-			
+
 			<nav class="nav d-flex">
   				<?php wp_nav_menu( array('menu' => '', 'container' => '', 'before' => '', 'after' => '', 'items_wrap' => '%3$s') ); ?>
+  				<div class="search">Search</div>
 			</nav>
 
 		</header>

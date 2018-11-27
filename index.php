@@ -2,8 +2,8 @@
 
 <div class="row">
 
-	<?php if (have_posts()) : ?>
-		<?php while (have_posts()) : the_post(); ?>
+	<?php if ( have_posts() ) : ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="col-md-6">
 				<div class="card flex-md-row mb-4 shadow-sm h-md-250">
@@ -31,7 +31,7 @@
 
 		<?php if (have_posts()) : ?>
 			<?php while (have_posts()) : the_post(); ?>
-				
+
 				<div class="blog-post">
 					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
