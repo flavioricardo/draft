@@ -17,8 +17,6 @@
 	<!-- DNS Prefetch -->
 	<link rel="dns-prefetch" href="//www.google-analytics.com">
 
-	<title><?php wp_title( '' ); ?></title>
-
 	<!--- Meta --->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,13 +49,17 @@
 
 		<header>
 
-			<section role="banner">
-				<h1><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+			<section role="banner" class="mt-2">
+				<?php if ( has_header_image() ) : ?>
+					<h1><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
+				<?php else : ?>
+					<h1><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php endif; ?>
 			</section>
 
 			<nav class="nav d-flex">
-  				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '', 'before' => '', 'after' => '', 'menu_class' => 'menu col-md-6 text-left') ); ?>
-  				<?php wp_nav_menu( array('theme_location' => 'social', 'container' => '', 'before' => '', 'after' => '', 'menu_class' => 'menu col-md-6 text-right') ); ?>
+  				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '', 'before' => '', 'after' => '', 'menu_class' => 'menu col-6 text-left') ); ?>
+  				<?php wp_nav_menu( array('theme_location' => 'social', 'container' => '', 'before' => '', 'after' => '', 'menu_class' => 'menu col-6 text-right') ); ?>
 			</nav>
 
 		</header>

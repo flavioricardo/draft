@@ -2,15 +2,15 @@
 
 <div class="row">
 
-	<div class="col-md-8">
+	<div class="col-8">
 
-		<?php if (have_posts()) : ?>
-			<?php while (have_posts()) : the_post(); ?>
+		<?php if ( have_posts() ) : ?>
+			<?php while  ( have_posts() ) : the_post(); ?>
 
-				<div class="blog-post">
-					<?php if (has_post_thumbnail()) : ?>
+				<article class="blog-post">
+					<?php if ( has_post_thumbnail() ) : ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php the_post_thumbnail( array(120, 120) ); ?>
+							<?php the_post_thumbnail( 'medium' ); ?>
 						</a>
 					<?php endif; ?>
 
@@ -24,14 +24,21 @@
 					</div>
 
 					<?php the_content(); ?>
-				</div>
+
+					<div class="blog-post-categories mb-2">
+						<span class="category"><?php _e( 'Categories: ' ); ?><?php the_category( ' ' ); ?></span>
+						<span class="tags"><?php the_tags( __( 'Tags:&nbsp;' ), ', ', '' ); ?></span>
+					</div>
+				</article>
 
 			<?php endwhile; ?>
 
-			<div class="left"><?php previous_post_link(); ?></div>
-			<div class="right"><?php next_post_link(); ?></div>
+			<div class="text-left"><?php previous_post_link(); ?></div>
+			<div class="text-right"><?php next_post_link(); ?></div>
 
-			<?php wp_list_comments( array('style' => 'ol') ); ?>
+			<ol class="comment list">
+				<?php wp_list_comments( array('style' => 'ol') ); ?>
+			</ol>
 
 		<?php else : ?>
 			<?php _e( 'Sorry, no posts matched your criteria.' ); ?>

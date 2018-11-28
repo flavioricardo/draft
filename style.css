@@ -46,6 +46,10 @@ aside .sidebar-widget li ul {
 
 aside .sidebar-widget li ul li {}
 
+article {
+	display: inline-block;
+}
+
 footer {
 	clear: both;
 }
