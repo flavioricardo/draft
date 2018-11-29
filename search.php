@@ -4,9 +4,13 @@
 
 	<div class="col-8">
 
-		<h3><?php _e( 'Search results for: ' ); ?><em><?php echo get_search_query(); ?></em></h3>
+		<div class="card mb-3">
+			<div class="card-body">
+				<h3><?php _e( 'Search results for: ' ); ?><em><?php echo get_search_query(); ?></em></h3>
 
-		<?php get_search_form(); ?>
+				<?php get_search_form(); ?>
+			</div>
+		</div>
 
 		<?php if ( have_posts() ) : ?>
 			<?php while  ( have_posts() ) : the_post(); ?>
