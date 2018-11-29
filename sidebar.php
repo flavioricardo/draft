@@ -1,11 +1,15 @@
 <aside class="col-4">
 
 	<div class="sidebar-widget">
-		<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'sidebar-1' ) ) ?>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		<?php endif; ?>
 	</div>
 
 	<div class="sidebar-widget">
-		<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'sidebar-2' ) ) ?>
+		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+			<?php dynamic_sidebar( 'sidebar-2' ); ?>
+		<?php endif; ?>
 	</div>
 
 </aside>
