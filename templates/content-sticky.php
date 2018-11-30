@@ -7,7 +7,6 @@
 			</h3>
 			<div class="text-muted"><?php the_time( 'M j' ); ?></div>
 			<div class="card-text mb-auto"><?php the_excerpt(); ?></div>
-			<a href="<?php the_permalink(); ?>"><?php _e( 'Continue reading' ); ?></a>
 		</div>
 		<?php if (has_post_thumbnail()) : ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">

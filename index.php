@@ -4,10 +4,8 @@
 
 	<?php
 		$args = array(
-			'post_type' => 'post',
-			'posts_per_page'      => 2,
-			'post__in'            => get_option( 'sticky_posts' ),
-			'ignore_sticky_posts' => true,
+			'posts_per_page' => 2,
+			'post__in' => get_option( 'sticky_posts' ),
 		);
 	?>
 	<?php $sticky_posts = new WP_Query( $args ); ?>

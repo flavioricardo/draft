@@ -1,5 +1,8 @@
 <?php
 
+// Add Theme Customizer Support
+require_once get_template_directory() . '/inc/customizer.php';
+
 if ( function_exists( 'add_theme_support' ) )
 {
     // Add Menu Support
@@ -7,6 +10,9 @@ if ( function_exists( 'add_theme_support' ) )
 
     // Add Custom Header Support
     add_theme_support( 'custom-header', array('height' => 225, 'width' => 1920) );
+
+    // Add Custom Logo Support
+    add_theme_support( 'custom-logo', array('height' => 78, 'width' => 105) );
 
     // Let WordPress manage the document title
     add_theme_support( 'title-tag' );
@@ -28,7 +34,7 @@ if ( function_exists( 'add_theme_support' ) )
 
     // Enable support for Post Formats
     add_theme_support( 'post-formats', array(
-        'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+        'aside', 'image', 'video'
     ) );
 
     // Localisation Support

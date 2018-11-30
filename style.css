@@ -53,3 +53,13 @@ article {
 footer {
 	clear: both;
 }
+
+footer .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer .menu li {
+	display: inline-block;
+}
