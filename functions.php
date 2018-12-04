@@ -1,5 +1,9 @@
 <?php
 
+// Add TGM Plugin Activation
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/required-plugins.php';
+
 // Add Theme Customizer Support
 require_once get_template_directory() . '/inc/customizer.php';
 
