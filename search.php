@@ -6,7 +6,7 @@
 
 		<div class="card mb-3">
 			<div class="card-body">
-				<h3><?php _e( 'Search results for: ' ); ?><em><?php echo get_search_query(); ?></em></h3>
+				<h3><?php _e( 'Search results for: ', 'draft' ); ?><em><?php echo get_search_query(); ?></em></h3>
 
 				<?php get_search_form(); ?>
 			</div>
@@ -19,10 +19,10 @@
 
 			<?php endwhile; ?>
 
-			<?php the_posts_pagination( array('screen_reader_text' => __( '' )) ); ?>
+			<?php the_posts_pagination( array('screen_reader_text' => __( ' ' )) ); ?>
 
 		<?php else : ?>
-			<?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+			<?php _e( 'Sorry, no posts matched your criteria.', 'draft' ); ?>
 		<?php endif; ?>
 
 	</div>

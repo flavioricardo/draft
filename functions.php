@@ -38,14 +38,14 @@ if ( function_exists( 'add_theme_support' ) )
     ) );
 
     // Localisation Support
-    load_theme_textdomain( get_template_directory() . '/languages' );
+    load_theme_textdomain( 'draft', get_template_directory() . '/languages/' );
 }
 
 // Create WP Nav Menus
 register_nav_menus(
     array(
-        'primary' => 'Primary Menu',
-        'social' => 'Social Links Menu'
+        'primary' => __( 'Primary Menu', 'draft' ),
+        'social' => __( 'Social Links Menu', 'draft' )
     )
 );
 

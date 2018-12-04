@@ -5,14 +5,10 @@ Description: A draft to a new WordPress Theme, created from scratch to you start
 Version: 1.0.0
 Author: Flavio Ricardo (@flavioricardo)
 Author URI: https://medium.com/@flavioricardo91
-
+Text Domain: draft
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 */
-
-body {}
-
-main {}
 
 nav .menu {
 	height: 3.75rem;
@@ -25,17 +21,9 @@ nav .menu li {
 	display: inline-block;
 }
 
-.blog-post h2 {}
-
-.blog-post h2 a {}
-
-aside {}
-
 aside .sidebar-widget li {
 	list-style: none;
 }
-
-aside .sidebar-widget li h3 {}
 
 aside .sidebar-widget li ul {
 	margin-left: 0;
@@ -43,8 +31,6 @@ aside .sidebar-widget li ul {
 	padding-left: 0;
 	padding-right: 0;
 }
-
-aside .sidebar-widget li ul li {}
 
 article {
 	display: inline-block;

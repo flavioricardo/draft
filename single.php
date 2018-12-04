@@ -21,7 +21,7 @@
 			</div>
 
 		<?php else : ?>
-			<?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+			<?php _e( 'Sorry, no posts matched your criteria.', 'draft' ); ?>
 		<?php endif; ?>
 
 	</div>

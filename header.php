@@ -48,8 +48,10 @@
 			<section role="banner" class="mt-2 text-center">
 				<?php if ( has_header_image() ) : ?>
 					<h1><a href="<?php bloginfo( 'url' ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
-				<?php else : ?>
+				<?php elseif ( has_custom_logo() ) : ?>
 					<h1><?php the_custom_logo(); ?></h1>
+				<?php else : ?>
+					<h1><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php endif; ?>
 			</section>
 
