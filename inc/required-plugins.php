@@ -2,7 +2,7 @@
 /**
  * @see http://tgmpluginactivation.com/configuration/ for detailed documentation.
  *
- * @package    TGM-Plugin-Activation
+ * @package    TGM Plugin Activation
  * @subpackage Example
  * @version    2.6.1 for parent theme Draft for publication on WordPress.org
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer

@@ -49,3 +49,9 @@ footer .menu {
 footer .menu li {
 	display: inline-block;
 }
+
+/*Gutenberg*/
+
+.wp-block-cover {
+	margin-top: .5rem!important;
+}
