@@ -82,4 +82,28 @@ if ( ! current_user_can( 'manage_options' ) )
     show_admin_bar( false );
 }
 
+function social_media_icons() {
+    echo '<div class="col-12 text-right share">
+            <ul>
+                <li class="facebook">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '" target="_blank">
+                        <img src="' . get_template_directory_uri() . '/img/Facebook.png" alt="' . __( 'Share on Facebook' ) .'" />
+                    </a>
+                </li>
+                <li class="twitter">
+                    <a href="http://twitter.com/home?status=' . get_the_title() . '%20' . get_the_permalink() . '" target="_blank">
+                        <img src="' . get_template_directory_uri() . '/img/Twitter.png" alt="' . __( 'Share on Twitter' ) .'" />
+                    </a>
+                </li>
+                <li class="whatsapp">
+                    <a href="whatsapp://send?text=' . get_the_title() . '%20' . get_the_permalink() . '">
+                        <img src="' . get_template_directory_uri() . '/img/WhatsApp.png" alt="' . __( 'Share on WhatsApp' ) .'" />
+                    </a>
+                </li>
+            </ul>
+        </div>';
+}
+
+add_action( 'after_article', 'social_media_icons', 0 );
+
 ?>

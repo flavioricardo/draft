@@ -24,4 +24,6 @@
 		<span class="category"><?php _e( 'Categories: ', 'draft' ); ?><?php the_category( ' ' ); ?></span>
 		<span class="tags"><?php the_tags( __( 'Tags:&nbsp;', 'draft' ), ', ', '' ); ?></span>
 	</div>
+
+	<?php do_action( 'after_article' ); ?>
 </article>

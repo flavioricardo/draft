@@ -23,6 +23,8 @@ nav .menu li {
 	display: inline-block;
 }
 
+/*Sidebar*/
+
 aside .sidebar-widget li {
 	list-style: none;
 }
@@ -34,9 +36,31 @@ aside .sidebar-widget li ul {
 	padding-right: 0;
 }
 
+/*Article*/
+
 article {
 	display: inline-block;
 }
+
+/*Social Media*/
+
+article .share ul {
+	list-style: none;
+}
+
+article .share ul li {
+	display: inline-block;
+}
+
+article .share ul .whatsapp {
+	display: none;
+}
+
+article .share ul li a img {
+	height: 35px;
+}
+
+/*Footer*/
 
 footer {
 	clear: both;
@@ -56,4 +80,12 @@ footer .menu li {
 
 .wp-block-cover {
 	margin-top: .5rem !important;
+}
+
+/*Mobile rules*/
+
+@media (max-width: 575.98px) {
+	article .share ul .whatsapp {
+		display: inline-block;
+	}
 }
