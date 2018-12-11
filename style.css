@@ -10,6 +10,8 @@ License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
 */
 
+/*Navigation menu fix*/
+
 nav .menu {
 	height: 3.75rem;
     list-style: none;
@@ -53,5 +55,5 @@ footer .menu li {
 /*Gutenberg*/
 
 .wp-block-cover {
-	margin-top: .5rem!important;
+	margin-top: .5rem !important;
 }
