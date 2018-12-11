@@ -9,9 +9,6 @@ require_once get_template_directory() . '/inc/customizer.php';
 
 if ( function_exists( 'add_theme_support' ) )
 {
-    // Enable Menu Support
-    add_theme_support( 'menus' );
-
     // Enable Custom Header Support
     add_theme_support( 'custom-header', array('height' => 225, 'width' => 1920) );
 
@@ -58,11 +55,13 @@ register_nav_menus(
     )
 );
 
-if ( function_exists( 'register_sidebar' ) )
+if ( ! isset( $content_width ) ) $content_width = 730;
+
+function draft_register_sidebar()
 {
     // Define Sidebar 1
     register_sidebar( array(
-        'name' => __( 'Sidebar 1' ),
+        'name' => __( 'Sidebar 1', 'draft' ),
         'id' => 'sidebar-1',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
@@ -70,40 +69,38 @@ if ( function_exists( 'register_sidebar' ) )
 
     // Define Sidebar 2
     register_sidebar( array(
-        'name' => __( 'Sidebar 2' ),
+        'name' => __( 'Sidebar 2', 'draft' ),
         'id' => 'sidebar-2',
         'before_title' => '<h3>',
         'after_title' => '</h3>'
     ) );
 }
 
-if ( ! current_user_can( 'manage_options' ) )
-{
-    show_admin_bar( false );
-}
+add_action( 'widgets_init', 'draft_register_sidebar' );
 
-function social_media_icons() {
+function draft_social_media_icons()
+{
     echo '<div class="col-12 text-right share">
             <ul>
                 <li class="facebook">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '" target="_blank">
-                        <img src="' . get_template_directory_uri() . '/img/Facebook.png" alt="' . __( 'Share on Facebook' ) .'" />
+                        <img src="' . get_template_directory_uri() . '/img/Facebook.png" alt="' . __( 'Share on Facebook', 'draft' ) .'" />
                     </a>
                 </li>
                 <li class="twitter">
                     <a href="http://twitter.com/home?status=' . get_the_title() . '%20' . get_the_permalink() . '" target="_blank">
-                        <img src="' . get_template_directory_uri() . '/img/Twitter.png" alt="' . __( 'Share on Twitter' ) .'" />
+                        <img src="' . get_template_directory_uri() . '/img/Twitter.png" alt="' . __( 'Share on Twitter', 'draft' ) .'" />
                     </a>
                 </li>
                 <li class="whatsapp">
                     <a href="whatsapp://send?text=' . get_the_title() . '%20' . get_the_permalink() . '">
-                        <img src="' . get_template_directory_uri() . '/img/WhatsApp.png" alt="' . __( 'Share on WhatsApp' ) .'" />
+                        <img src="' . get_template_directory_uri() . '/img/WhatsApp.png" alt="' . __( 'Share on WhatsApp', 'draft' ) .'" />
                     </a>
                 </li>
             </ul>
         </div>';
 }
 
-add_action( 'after_article', 'social_media_icons', 0 );
+add_action( 'after_article', 'draft_social_media_icons', 0 );
 
 ?>

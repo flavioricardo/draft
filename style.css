@@ -2,13 +2,13 @@
 Theme Name: Draft
 Theme URI: http://encolh.eu/labs/draft
 Description: A draft to a new WordPress Theme, created from scratch to you start your project with a responsive layout with Bootstrap 4.
-Version: 1.1.0
+Version: 1.0.0
 Author: Flavio Ricardo (@flavioricardo)
 Author URI: https://medium.com/@flavioricardo91
 Text Domain: draft
 License: MIT
 License URI: http://opensource.org/licenses/mit-license.php
-Tags: custom-header, draft, featured-images, flexible-width, one-column, responsive, two-columns
+Tags: custom-header, featured-images, one-column, two-columns
 Text Domain: draft
 */
 
@@ -83,6 +83,26 @@ footer .menu li {
 .wp-block-cover {
 	margin-top: .5rem !important;
 }
+
+/*Required rules*/
+
+.wp-caption{}
+
+.wp-caption-text{}
+
+.sticky{}
+
+.screen-reader-text{}
+
+.gallery-caption{}
+
+.bypostauthor{}
+
+.alignright{}
+
+.alignleft{}
+
+.aligncenter{}
 
 /*Mobile rules*/
 
