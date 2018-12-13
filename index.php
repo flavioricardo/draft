@@ -20,6 +20,8 @@
 
 	<div class="col-8">
 
+		<?php do_action( 'draft_banner_area' ); ?>
+
 		<?php
 			$args = array(
 				'paged' => (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 0,
@@ -36,7 +38,7 @@
 			<?php wp_reset_postdata(); ?>
 
 			<div class="navigation mb-3">
-				<?php the_posts_pagination( array('screen_reader_text' => ' ') ); ?>
+				<?php the_posts_pagination( array('screen_reader_text' => __( ' ', 'draft' )) ); ?>
 			</div>
 
 		<?php else : ?>

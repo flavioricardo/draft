@@ -19,7 +19,7 @@
 
 			<?php endwhile; ?>
 
-			<?php the_posts_pagination( array('screen_reader_text' => __( ' ' )) ); ?>
+			<?php the_posts_pagination( array('screen_reader_text' => __( ' ', 'draft' )) ); ?>
 
 		<?php else : ?>
 			<?php _e( 'Sorry, no posts matched your criteria.', 'draft' ); ?>

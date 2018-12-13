@@ -78,6 +78,14 @@ function draft_register_sidebar()
 
 add_action( 'widgets_init', 'draft_register_sidebar' );
 
+function draft_banner()
+{
+    $banner = '<a href="' . esc_url( get_theme_mod( 'set_banner_url' ) ) . '"><img class="img-fluid" src="' . esc_url( get_theme_mod( 'set_banner_area' ) ) . '" alt="' . get_theme_mod( 'set_banner_desc' ) . '" /></a>';
+    echo '<div class="mb-2">' . $banner . '</div>';
+}
+
+add_action( 'draft_banner_area', 'draft_banner' );
+
 function draft_social_media_icons()
 {
     echo '<div class="col-12 text-right share">
@@ -101,6 +109,6 @@ function draft_social_media_icons()
         </div>';
 }
 
-add_action( 'after_article', 'draft_social_media_icons', 0 );
+add_action( 'after_article', 'draft_social_media_icons' );
 
 ?>
