@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-12-11 17:23-0200\n"
-"PO-Revision-Date: 2018-12-11 17:42-0200\n"
+"POT-Creation-Date: 2018-12-13 11:18-0200\n"
+"PO-Revision-Date: 2018-12-13 11:21-0200\n"
 "Last-Translator: Flávio Ricardo <flaviobazana@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "Not Found"
 msgstr "Não Encontrado"
 
-#: 404.php:8 archive.php:27 index.php:43 page.php:25 search.php:25
+#: 404.php:8 archive.php:27 index.php:45 page.php:25 search.php:25
 #: single.php:24
 msgid "Sorry, no posts matched your criteria."
 msgstr "Desculpe, nenhum post encontrado com estes critérios."
@@ -52,31 +52,31 @@ msgstr "Comentários Recentes &rarr;"
 msgid "Comments are closed!"
 msgstr "Os comentários estão fechados!"
 
-#: functions.php:56
+#: functions.php:53
 msgid "Primary Menu"
 msgstr "Menu Principal"
 
-#: functions.php:57
+#: functions.php:54
 msgid "Social Links Menu"
 msgstr "Menu de Mídias Sociais"
 
-#: functions.php:65
+#: functions.php:64
 msgid "Sidebar 1"
 msgstr "Barra Lateral 1"
 
-#: functions.php:73
+#: functions.php:72
 msgid "Sidebar 2"
 msgstr "Barra Lateral 2"
 
-#: functions.php:90
+#: functions.php:95
 msgid "Share on Facebook"
 msgstr "Compartilhar no Facebook"
 
-#: functions.php:95
+#: functions.php:100
 msgid "Share on Twitter"
 msgstr "Compartilhar no Twitter"
 
-#: functions.php:100
+#: functions.php:105
 msgid "Share on WhatsApp"
 msgstr "Compartilhar no WhatsApp"
 
@@ -104,7 +104,7 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:385
 msgid "Return to Required Plugins Installer"
-msgstr ""
+msgstr "Retornar ao Instalador de Plugins Obrigatórios"
 
 #: inc/class-tgm-plugin-activation.php:386
 msgid "Return to the Dashboard"
@@ -193,7 +193,7 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2330
 msgid "Requires Update"
-msgstr ""
+msgstr "Requer Atualização"
 
 #: inc/class-tgm-plugin-activation.php:2333
 msgid "Update recommended"
@@ -211,7 +211,7 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:2482
 msgid "unknown"
-msgstr ""
+msgstr "desconhecido"
 
 #: inc/class-tgm-plugin-activation.php:2490
 msgid "Installed version:"
@@ -248,17 +248,17 @@ msgstr "Status"
 #: inc/class-tgm-plugin-activation.php:2603
 #, php-format
 msgid "Install %2$s"
-msgstr ""
+msgstr "Instalar %2$s"
 
 #: inc/class-tgm-plugin-activation.php:2608
 #, php-format
 msgid "Update %2$s"
-msgstr ""
+msgstr "Atualizar %2$s"
 
 #: inc/class-tgm-plugin-activation.php:2614
 #, php-format
 msgid "Activate %2$s"
-msgstr ""
+msgstr "Ativar %2$s"
 
 #: inc/class-tgm-plugin-activation.php:2717
 msgid "Install"
@@ -325,7 +325,7 @@ msgstr ""
 #: inc/class-tgm-plugin-activation.php:3512
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Instalando e Ativando Plugin %1$s (%2$d/%3$d)"
 
 #: inc/class-tgm-plugin-activation.php:3515
 msgid ""
@@ -335,20 +335,48 @@ msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:3518
 msgid "All installations have been completed."
-msgstr ""
+msgstr "Todas as instalações foram completadas."
 
 #: inc/class-tgm-plugin-activation.php:3520
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Instalando Plugin %1$s (%2$d/%3$d)"
+
+#: inc/customizer.php:8 inc/customizer.php:23
+msgid "Copyright"
+msgstr "Copyright"
+
+#: inc/customizer.php:9
+msgid "Copyright Section"
+msgstr "Seção de Copyright"
+
+#: inc/customizer.php:33
+msgid "Banner"
+msgstr "Banner"
+
+#: inc/customizer.php:34
+msgid "Banner Area"
+msgstr "Área do Banner"
+
+#: inc/customizer.php:48
+msgid "URL"
+msgstr "URL"
+
+#: inc/customizer.php:65
+msgid "Description"
+msgstr "Descrição"
+
+#: inc/customizer.php:82
+msgid "Image"
+msgstr "Imagem"
+
+#: index.php:41 search.php:22
+msgid " "
 msgstr ""
 
 #: search.php:9
 msgid "Search results for: "
 msgstr "Resultados da busca por: "
-
-#: search.php:22
-msgid " "
-msgstr ""
 
 #: templates/content-search.php:8 templates/content-single.php:8
 #: templates/content-video.php:8 templates/content.php:8
