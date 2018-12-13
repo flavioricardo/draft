@@ -80,8 +80,11 @@ add_action( 'widgets_init', 'draft_register_sidebar' );
 
 function draft_banner()
 {
-    $banner = '<a href="' . esc_url( get_theme_mod( 'set_banner_url' ) ) . '"><img class="img-fluid" src="' . esc_url( get_theme_mod( 'set_banner_area' ) ) . '" alt="' . get_theme_mod( 'set_banner_desc' ) . '" /></a>';
-    echo '<div class="mb-2">' . $banner . '</div>';
+    if ( get_theme_mod( 'set_banner_area' ) )
+    {
+        $banner = '<a href="' . esc_url( get_theme_mod( 'set_banner_url' ) ) . '"><img class="img-fluid" src="' . esc_url( get_theme_mod( 'set_banner_area' ) ) . '" alt="' . get_theme_mod( 'set_banner_desc' ) . '" /></a>';
+        echo '<div class="mb-2">' . $banner . '</div>';
+    }
 }
 
 add_action( 'draft_banner_area', 'draft_banner' );
