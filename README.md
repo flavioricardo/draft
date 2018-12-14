@@ -28,8 +28,4 @@ The Draft theme uses some plugins to improve his functionalities, some plugins a
 
 ## Author
 
-<<<<<<< HEAD
 [Flavio Ricardo](https://medium.com/@flavioricardo91) [(@flavioricardo)](https://twitter.com/flavioricardo), feel free to get in touch or buy me a coffee! :coffee:
-=======
-[Flavio Ricardo](https://medium.com/@flavioricardo91) [(@flavioricardo)](https://twitter.com/flavioricardo), feel free to get in touch or buy me a coffee! :coffee:
->>>>>>> 60022297d402aafdaec6812bde287f1fd0358e37
