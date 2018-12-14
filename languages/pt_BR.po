@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-12-13 11:18-0200\n"
-"PO-Revision-Date: 2018-12-13 11:21-0200\n"
+"POT-Creation-Date: 2018-12-14 18:22-0200\n"
+"PO-Revision-Date: 2018-12-14 18:24-0200\n"
 "Last-Translator: Flávio Ricardo <flaviobazana@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "Not Found"
 msgstr "Não Encontrado"
 
-#: 404.php:8 archive.php:27 index.php:45 page.php:25 search.php:25
+#: 404.php:8 archive.php:27 index.php:46 page.php:25 search.php:25
 #: single.php:24
 msgid "Sorry, no posts matched your criteria."
 msgstr "Desculpe, nenhum post encontrado com estes critérios."
@@ -68,15 +68,15 @@ msgstr "Barra Lateral 1"
 msgid "Sidebar 2"
 msgstr "Barra Lateral 2"
 
-#: functions.php:95
+#: functions.php:114
 msgid "Share on Facebook"
 msgstr "Compartilhar no Facebook"
 
-#: functions.php:100
+#: functions.php:119
 msgid "Share on Twitter"
 msgstr "Compartilhar no Twitter"
 
-#: functions.php:105
+#: functions.php:124
 msgid "Share on WhatsApp"
 msgstr "Compartilhar no WhatsApp"
 
@@ -185,11 +185,11 @@ msgstr "Instalado Mas Não Ativado"
 
 #: inc/class-tgm-plugin-activation.php:2321
 msgid "Active"
-msgstr ""
+msgstr "Ativo"
 
 #: inc/class-tgm-plugin-activation.php:2327
 msgid "Required Update not Available"
-msgstr ""
+msgstr "Atualização Obrigatória não Disponível"
 
 #: inc/class-tgm-plugin-activation.php:2330
 msgid "Requires Update"
@@ -197,17 +197,17 @@ msgstr "Requer Atualização"
 
 #: inc/class-tgm-plugin-activation.php:2333
 msgid "Update recommended"
-msgstr ""
+msgstr "Atualização recomendada"
 
 #: inc/class-tgm-plugin-activation.php:2342
 #, php-format
 msgid "%1$s, %2$s"
-msgstr ""
+msgstr "%1$s, %2$s"
 
 #: inc/class-tgm-plugin-activation.php:2388
 #, php-format
 msgid "All <span class=\"count\">(%s)</span>"
-msgstr ""
+msgstr "Todos <span class=\"count\">(%s)</span>"
 
 #: inc/class-tgm-plugin-activation.php:2482
 msgid "unknown"
@@ -215,15 +215,15 @@ msgstr "desconhecido"
 
 #: inc/class-tgm-plugin-activation.php:2490
 msgid "Installed version:"
-msgstr ""
+msgstr "Versão instalada:"
 
 #: inc/class-tgm-plugin-activation.php:2498
 msgid "Minimum required version:"
-msgstr ""
+msgstr "Versão mínima requerida:"
 
 #: inc/class-tgm-plugin-activation.php:2510
 msgid "Available version:"
-msgstr ""
+msgstr "Versão disponível:"
 
 #: inc/class-tgm-plugin-activation.php:2547
 msgid "Plugin"
@@ -370,13 +370,21 @@ msgstr "Descrição"
 msgid "Image"
 msgstr "Imagem"
 
-#: index.php:41 search.php:22
-msgid " "
-msgstr ""
+#: index.php:41
+msgid "Previous"
+msgstr "Anterior"
+
+#: index.php:42
+msgid "Next"
+msgstr "Próxima"
 
 #: search.php:9
 msgid "Search results for: "
 msgstr "Resultados da busca por: "
+
+#: search.php:22
+msgid " "
+msgstr ""
 
 #: templates/content-search.php:8 templates/content-single.php:8
 #: templates/content-video.php:8 templates/content.php:8
@@ -393,12 +401,12 @@ msgstr "1 Resposta"
 msgid "% Replies"
 msgstr "% Respostas"
 
-#: templates/content-search.php:15 templates/content-single.php:24
+#: templates/content-search.php:15 templates/content-single.php:25
 #: templates/content-video.php:16 templates/content.php:14
 msgid "Categories: "
 msgstr "Categorias: "
 
-#: templates/content-search.php:16 templates/content-single.php:25
+#: templates/content-search.php:16 templates/content-single.php:26
 #: templates/content-video.php:17 templates/content.php:15
 msgid "Tags:&nbsp;"
 msgstr "Tags:&nbsp;"
