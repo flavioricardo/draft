@@ -19,6 +19,7 @@
 	<?php endif; ?>
 
 	<?php the_content(); ?>
+	<?php wp_link_pages(); ?>
 
 	<div class="blog-post-categories mb-2">
 		<span class="category"><?php _e( 'Categories: ', 'draft' ); ?><?php the_category( ' ' ); ?></span>
