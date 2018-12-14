@@ -106,8 +106,18 @@ footer .menu li {
 
 /*Mobile rules*/
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
 	article .share ul .whatsapp {
 		display: inline-block;
 	}
 }
+
+@media (max-width: 768px) {
+	main.container header nav {
+		display: none !important;
+	}
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

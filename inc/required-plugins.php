@@ -24,6 +24,12 @@ function draft_register_required_plugins() {
 		),
 
 		array(
+			'name' => 'WP Responsive Menu',
+			'slug' => 'wp-responsive-menu',
+			'required' => true
+		),
+
+		array(
 			'name' => 'Regenerate Thumbnails',
 			'slug' => 'regenerate-thumbnails',
 			'required' => false
