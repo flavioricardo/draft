@@ -1,5 +1,3 @@
-# [Draft](http://encolh.eu/labs/draft)
-
 A draft to a new WordPress Theme, created from scratch to you start your project with a responsive layout with Bootstrap 4.
 
 ## Features
