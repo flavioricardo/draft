@@ -1,6 +1,6 @@
 A draft to a new WordPress Theme, created from scratch to you start your project with a responsive layout with Bootstrap 4.
 
-[Download Draft Theme for WordPress](https://github.com/flavioricardo/draft/archive/master.zip)
+[Download Draft Theme for WordPress](https://github.com/flavioricardo/draft/archive/master.zip) &bull; [Source Code](https://github.com/flavioricardo/draft)
 
 ## Features
 
