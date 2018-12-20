@@ -38,8 +38,8 @@
 			<?php wp_reset_postdata(); ?>
 
 			<div class="navigation mb-3">
-				<div class="alignleft"><?php previous_posts_link( __( 'Previous', 'draft' ), $the_query->max_num_pages) ?></div>
-    			<div class="alignright"><?php next_posts_link( __( 'Next', 'draft' ), $the_query->max_num_pages) ?></div>
+				<div class="float-left"><?php previous_posts_link( __( 'Previous', 'draft' ), $the_query->max_num_pages) ?></div>
+    			<div class="float-right"><?php next_posts_link( __( 'Next', 'draft' ), $the_query->max_num_pages) ?></div>
 			</div>
 
 		<?php else : ?>
