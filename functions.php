@@ -15,6 +15,9 @@ if ( function_exists( 'add_theme_support' ) )
     // Enable Custom Logo Support
     add_theme_support( 'custom-logo', array('height' => 78, 'width' => 105) );
 
+    // Enable Custom Background Support
+    add_theme_support( 'custom-background' );
+
     // Enable WordPress management for document title
     add_theme_support( 'title-tag' );
 
