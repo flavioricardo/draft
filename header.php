@@ -33,11 +33,31 @@
 
 <body <?php body_class(); ?>>
 
+	<nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+	<div class="container">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<?php
+		wp_nav_menu( array(
+			'theme_location'    => 'primary',
+			'depth'             => 2,
+			'container'         => 'div',
+			'container_class'   => 'collapse navbar-collapse',
+			'container_id'      => 'navbar-collapse',
+			'menu_class'        => 'nav navbar-nav',
+			'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+			'walker'            => new WP_Bootstrap_Navwalker()
+		) );
+		?>
+		</div>
+	</nav>
+
 	<main class="container">
 
 		<header>
 
-			<section role="banner" class="mt-2 text-center">
+			<section role="banner" class="mt-4 mb-4 text-left">
 				<?php if ( has_header_image() ) : ?>
 					<h1><a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
 				<?php elseif ( has_custom_logo() ) : ?>
@@ -46,9 +66,5 @@
 					<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php endif; ?>
 			</section>
-
-			<nav class="nav d-flex">
-  				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'before' => '', 'after' => '', 'menu_class' => 'menu col-12 text-left' ) ); ?>
-			</nav>
 
 		</header>

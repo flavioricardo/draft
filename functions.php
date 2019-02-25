@@ -4,6 +4,9 @@
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/inc/required-plugins.php';
 
+// Add WP Bootstrap Navwalker
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
 // Add Theme Customizer Support
 require_once get_template_directory() . '/inc/customizer.php';
 
@@ -13,7 +16,7 @@ if ( function_exists( 'add_theme_support' ) )
     add_theme_support( 'custom-header', array('height' => 225, 'width' => 1920) );
 
     // Enable Custom Logo Support
-    add_theme_support( 'custom-logo', array('height' => 78, 'width' => 105) );
+    add_theme_support( 'custom-logo', array('height' => 180, 'width' => 280) );
 
     // Enable Custom Background Support
     add_theme_support( 'custom-background' );
@@ -31,7 +34,7 @@ if ( function_exists( 'add_theme_support' ) )
     add_image_size( 'large', 700, '', true ); // Large Thumbnail
     add_image_size( 'medium', 250, '', true ); // Medium Thumbnail
     add_image_size( 'small', 120, '', true ); // Small Thumbnail
-    add_image_size( 'custom-size', 150, 290, true ); // Custom Thumbnail Size
+    add_image_size( 'custom-size', 728, 360, true ); // Custom Thumbnail Size
 
     // Enables post and comment RSS feed links to head
     add_theme_support( 'automatic-feed-links' );
@@ -88,6 +91,7 @@ function draft_load_scripts()
         wp_enqueue_script( 'comment-reply' );
     }
 
+    wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2', 'all');
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '4.1.3', 'all');
     wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array('jquery'), '4.1.3', true);
     wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3', true);
@@ -132,3 +136,24 @@ function draft_social_media_icons()
 }
 
 add_action( 'after_article', 'draft_social_media_icons' );
+
+function draft_related_posts($tags = null)
+{
+    $posts = new WP_Query(array( 'posts_per_page' => 3, 'tag_slug__in' => $tags, 'ignore_sticky_posts' => 1, 'orderby' => 'rand' )); ?>
+    <div class="related_posts row mb-4">
+        <h3 class="col-md-12 clear"><em>Posts</em> Recomendados</h3>
+        <?php while ($posts->have_posts()) : $posts->the_post(); ?>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(640, 360), array( 'class' => 'img-fluid' )); ?></a>
+                    <?php endif; ?>
+                    <div class="caption"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    </div>
+<?php wp_reset_postdata();
+}
+
+add_action( 'after_article', 'draft_related_posts' );
