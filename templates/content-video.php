@@ -1,4 +1,4 @@
-<article class="blog-post <?php post_class(); ?>">
+<article <?php post_class( 'blog-post' ); ?>>
 	<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 	<div class="blog-post-meta">
@@ -16,10 +16,5 @@
 
 	<div class="mt-3">
 		<?php the_content(); ?>
-	</div>
-
-	<div class="blog-post-categories mb-4">
-		<span class="category"><?php _e( 'Categories: ', 'draft' ); ?><?php the_category( ' ' ); ?></span>
-		<span class="tags"><?php the_tags( __( 'Tags:&nbsp;', 'draft' ), ', ', '' ); ?></span>
 	</div>
 </article>

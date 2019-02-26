@@ -34,7 +34,7 @@ if ( function_exists( 'add_theme_support' ) )
     add_image_size( 'large', 700, '', true ); // Large Thumbnail
     add_image_size( 'medium', 250, '', true ); // Medium Thumbnail
     add_image_size( 'small', 120, '', true ); // Small Thumbnail
-    add_image_size( 'custom-size', 728, 360, true ); // Custom Thumbnail Size
+    add_image_size( 'custom-size', 640, '', true ); // Custom Thumbnail Size
 
     // Enables post and comment RSS feed links to head
     add_theme_support( 'automatic-feed-links' );

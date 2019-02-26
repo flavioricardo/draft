@@ -12,6 +12,21 @@ Tags: custom-header, featured-images, one-column, two-columns
 Text Domain: draft
 */
 
+/* HTML */
+
+a,
+a:active,
+a:focus,
+a:visited {
+	color: #876F93;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #AF97BB;
+	text-decoration: none;
+}
+
 /*Navigation menu fix*/
 
 nav .menu {
@@ -40,8 +55,15 @@ aside .sidebar-widget li ul {
 
 /*Article*/
 
-article {
-	display: inline-block;
+figure {
+	width: 100% !important;
+}
+
+article img {
+	border-radius: .25rem !important;
+    height: auto;
+	max-width: 100%;
+	width: 100%;
 }
 
 /*Social Media*/
@@ -60,6 +82,7 @@ article .share ul .whatsapp {
 
 article .share ul li a img {
 	height: 35px;
+	width: auto;
 }
 
 /*Footer*/
@@ -146,7 +169,9 @@ footer .menu li {
 
 .wp-caption{}
 
-.wp-caption-text{}
+.wp-caption-text{
+	font-style: italic;
+}
 
 .sticky{}
 

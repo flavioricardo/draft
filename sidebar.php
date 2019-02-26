@@ -13,7 +13,7 @@
 				<?php if ($contador == 0) : ?>
 					<li class="list-group-item">
 						<a class="card-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php the_post_thumbnail(array(640, 360), array('class' => 'card-img-top img-fluid flex-auto d-none d-lg-block mt-1 mb-3')); ?>
+							<?php the_post_thumbnail( 'large', array('class' => 'rounded img-fluid flex-auto d-none d-lg-block mt-1 mb-2')); ?>
 						</a>
 						<h4 class="card-title">
 							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>

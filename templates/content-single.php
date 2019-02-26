@@ -1,4 +1,4 @@
-<article class="blog-post <?php post_class(); ?>">
+<article <?php post_class( 'blog-post' ); ?>>
 	<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 	<div class="blog-post-meta">
@@ -16,7 +16,7 @@
 
 	<?php if ( has_post_thumbnail() && !get_post_format() ) : ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<?php the_post_thumbnail( 'custom-size', array( 'class' => 'img-fluid mb-2' ) ); ?>
+			<?php the_post_thumbnail( 'large', array('class' => 'img-fluid flex-auto rounded mb-3') ); ?>
 		</a>
 	<?php endif; ?>
 
@@ -28,7 +28,6 @@
 	<?php wp_link_pages(); ?>
 
 	<div class="blog-post-categories mb-2">
-		<span class="category"><?php _e( 'Categories: ', 'draft' ); ?><?php the_category( ' ' ); ?></span>
 		<span class="tags"><?php the_tags( __( 'Tags:&nbsp;', 'draft' ), ', ', '' ); ?></span>
 	</div>
 

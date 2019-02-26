@@ -20,7 +20,7 @@
 			<?php wp_reset_postdata(); ?>
 
 			<div class="navigation mb-3">
-				<?php the_posts_pagination( array('screen_reader_text' => ' ') ); ?>
+				<?php wp_pagenavi(); ?>
 			</div>
 
 		<?php else : ?>
