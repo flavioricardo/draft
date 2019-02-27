@@ -40,19 +40,6 @@ nav .menu li {
 	display: inline-block;
 }
 
-/*Sidebar*/
-
-aside .sidebar-widget li {
-	list-style: none;
-}
-
-aside .sidebar-widget li ul {
-	margin-left: 0;
-	margin-right: 0;
-	padding-left: 0;
-	padding-right: 0;
-}
-
 /*Article*/
 
 figure {
@@ -60,7 +47,6 @@ figure {
 }
 
 article img {
-	border-radius: .25rem !important;
     height: auto;
 	max-width: 100%;
 	width: 100%;

@@ -143,7 +143,7 @@ function draft_related_posts($tags = null)
     <div class="related_posts row mb-4">
         <h3 class="col-md-12 clear"><em>Posts</em> Recomendados</h3>
         <?php while ($posts->have_posts()) : $posts->the_post(); ?>
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4 mb-2">
                 <div class="thumbnail">
                     <?php if (has_post_thumbnail()) : ?>
                         <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(640, 360), array( 'class' => 'img-fluid' )); ?></a>

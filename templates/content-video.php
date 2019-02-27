@@ -1,4 +1,4 @@
-<article <?php post_class( 'blog-post' ); ?>>
+<article <?php post_class( 'blog-post mb-4' ); ?>>
 	<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 	<div class="blog-post-meta">

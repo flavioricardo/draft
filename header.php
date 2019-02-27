@@ -54,18 +54,37 @@
 		</div>
 	</nav>
 
-	<main class="container">
+	<main>
 
-		<header>
+		<header class="container">
 
-			<section role="banner" class="mt-4 mb-4 text-left">
-				<?php if ( has_header_image() ) : ?>
-					<h1><a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
-				<?php elseif ( has_custom_logo() ) : ?>
-					<h1><?php the_custom_logo(); ?></h1>
-				<?php else : ?>
-					<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php endif; ?>
-			</section>
+			<div class="row">
+
+				<div class="col-lg-6">
+					<section role="banner" class="mt-4 mb-4 text-left">
+						<?php if ( has_header_image() ) : ?>
+							<h1><a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
+						<?php elseif ( has_custom_logo() ) : ?>
+							<h1><?php the_custom_logo(); ?></h1>
+						<?php else : ?>
+							<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php endif; ?>
+					</section>
+				</div>
+
+				<div class="col-lg-6">
+					<?php
+					wp_nav_menu( array(
+						'theme_location'  => 'primary',
+						'depth'	          => 2,
+						'container'       => 'ul',
+						'menu_class' => 'nav justify-content-end d-none d-lg-block'
+					) );
+					?>
+				</div>
+
+			</div>
 
 		</header>
+
+		<div class="container">

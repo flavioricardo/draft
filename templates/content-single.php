@@ -14,9 +14,13 @@
 		</div>
 	</div>
 
+	<div class="excerpt font-italic">
+		<?php the_excerpt(); ?>
+	</div>
+
 	<?php if ( has_post_thumbnail() && !get_post_format() ) : ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<?php the_post_thumbnail( 'large', array('class' => 'img-fluid flex-auto rounded mb-3') ); ?>
+			<?php the_post_thumbnail( 'large', array('class' => 'img-fluid flex-auto mb-3') ); ?>
 		</a>
 	<?php endif; ?>
 
@@ -28,7 +32,8 @@
 	<?php wp_link_pages(); ?>
 
 	<div class="blog-post-categories mb-2">
-		<span class="tags"><?php the_tags( __( 'Tags:&nbsp;', 'draft' ), ', ', '' ); ?></span>
+		<i class="fas fa-bookmark d-none d-lg-inline-block"></i>
+		<span class="tags"><?php the_tags( __( 'More about:&nbsp;', 'draft' ), ', ', '' ); ?></span>
 	</div>
 
 	<?php do_action( 'after_article' ); ?>

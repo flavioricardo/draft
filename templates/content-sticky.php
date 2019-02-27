@@ -9,10 +9,10 @@
 			<div class="d-inline-block"><?php the_category( ' ' ); ?></div>
 		</div>
 	</div>
-	<div class="card mb-4 shadow">
+	<div class="card mb-4 shadow rounded-0">
 		<?php if (has_post_thumbnail()) : ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail( 'large', array('class' => 'card-img-top rounded-top img-fluid flex-auto d-none d-lg-block') ); ?>
+				<?php the_post_thumbnail( 'large', array('class' => 'img-fluid flex-auto d-none d-lg-block') ); ?>
 			</a>
 		<?php endif; ?>
 		<div class="card-body d-flex flex-column align-items-start">
