@@ -18,7 +18,7 @@
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
-								<h5 class="card-title"><i class="fas fa-gamepad mr-2"></i><a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+								<p class="card-title"><i class="fas fa-gamepad mr-2"></i><a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
 								<p class="card-text"><i class="fas fa-calendar-alt mr-2"></i><?php echo the_field('data_de_lancamento'); ?></p>
 								<p class="card-text"><i class="fas fa-building mr-2"></i><a href="<?php echo get_tag_link(get_field('empresa')); ?>" title="<?php the_title(); ?>"><?php echo get_tag(get_field('empresa'))->name; ?></a></h5>
 							</div>
