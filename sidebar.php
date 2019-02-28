@@ -3,6 +3,37 @@
 	<div class="sidebar-widget mb-4">
 		<?php
 		$contador = 0;
+		$lancamentos = new WP_Query(array('posts_per_page' => 5, 'post_type' => 'lancamentos', 'orderby' => 'data_de_lancamento' ));
+		if ($lancamentos->have_posts()) : ?>
+			<div class="section-call">
+				<h3>Próximos <strong>Lançamentos</strong></h3>
+			</div>
+			<?php while ($lancamentos->have_posts()) : $lancamentos->the_post(); ?>
+				<div class="card shadow rounded-0 mb-3">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+							<a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>">
+								<?php the_post_thumbnail( 'small', array('class' => 'img-fluid flex-auto card-img rounded-0')); ?>
+							</a>
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title"><i class="fas fa-gamepad mr-2"></i><a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+								<p class="card-text"><i class="fas fa-calendar-alt mr-2"></i><?php echo the_field('data_de_lancamento'); ?></p>
+								<p class="card-text"><i class="fas fa-building mr-2"></i><a href="<?php echo get_tag_link(get_field('empresa')); ?>" title="<?php the_title(); ?>"><?php echo get_tag(get_field('empresa'))->name; ?></a></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endwhile; ?>
+		<?php endif;
+		wp_reset_postdata();
+		?>
+	</div>
+
+	<div class="sidebar-widget mb-4">
+		<?php
+		$contador = 0;
 		$the_query = new WP_Query(array('category__in' => 2, 'posts_per_page' => 5));
 		if ($the_query->have_posts()) : ?>
 			<div class="section-call">
@@ -25,7 +56,7 @@
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 					</li>
 				<?php endif; ?>
-		<?php
+			<?php
 			$contador++;
 			endwhile; ?>
 			</ul>
@@ -41,7 +72,7 @@
         <div class="excerpt">O Conversa de Sofá é um blog com notícias, dicas e tutoriais sobre jogos, análises e novidades sobre os últimos lançamentos e cobertura de eventos.</div>
         <?php
 		wp_nav_menu( array(
-			'theme_location'  => 'social',
+			'theme_location'  => 'sidebar',
 			'depth'	          => 2,
 			'container'       => 'ul',
 			'menu_class' => 'mt-3',

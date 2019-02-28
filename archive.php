@@ -19,7 +19,7 @@
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 
-			<div class="navigation mb-3">
+			<div class="navigation">
 				<?php wp_pagenavi(); ?>
 			</div>
 

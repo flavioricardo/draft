@@ -14,7 +14,7 @@
 		</div>
 	</div>
 
-	<div class="excerpt font-italic">
+	<div class="font-italic">
 		<?php the_excerpt(); ?>
 	</div>
 
@@ -31,10 +31,12 @@
 	<?php the_content(); ?>
 	<?php wp_link_pages(); ?>
 
-	<div class="blog-post-categories mb-2">
-		<i class="fas fa-bookmark d-none d-lg-inline-block"></i>
-		<span class="tags"><?php the_tags( __( 'More about:&nbsp;', 'draft' ), ', ', '' ); ?></span>
-	</div>
+	<div class="row">
+		<div class="col-lg-9">
+			<i class="fas fa-bookmark d-none d-lg-inline-block"></i>
+			<div class="d-inline"><?php the_tags( '', ', ', '' ); ?></div>
+		</div>
 
-	<?php do_action( 'after_article' ); ?>
+		<?php do_action( 'after_article' ); ?>
+	</div>
 </article>

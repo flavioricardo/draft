@@ -33,7 +33,7 @@
 
 <body <?php body_class(); ?>>
 
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" role="navigation">
 		<div class="container">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -60,7 +60,7 @@
 
 			<div class="row">
 
-				<div class="col-lg-6">
+				<div class="col-lg-4">
 					<section role="banner" class="mt-4 mb-4 text-left">
 						<?php if ( has_header_image() ) : ?>
 							<h1><a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
@@ -72,13 +72,13 @@
 					</section>
 				</div>
 
-				<div class="col-lg-6">
+				<div class="col-lg-8">
 					<?php
 					wp_nav_menu( array(
-						'theme_location'  => 'primary',
+						'theme_location'  => 'header',
 						'depth'	          => 2,
 						'container'       => 'ul',
-						'menu_class' => 'nav justify-content-end d-none d-lg-block'
+						'menu_class' => 'nav nav-pills justify-content-end d-none d-lg-flex'
 					) );
 					?>
 				</div>

@@ -22,7 +22,7 @@
 				<?php $count++; ?>
 			<?php endwhile; ?>
 
-			<div class="navigation mb-3">
+			<div class="navigation">
 				<?php wp_pagenavi(); ?>
 			</div>
 		<?php else : ?>

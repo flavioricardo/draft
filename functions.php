@@ -57,7 +57,8 @@ if ( function_exists( 'add_theme_support' ) )
 register_nav_menus(
     array(
         'primary' => __( 'Primary Menu', 'draft' ),
-        'social' => __( 'Social Links Menu', 'draft' )
+        'header' => __( 'Header Links Menu', 'draft' ),
+        'sidebar' => __( 'Sidebar Links Menu', 'draft' )
     )
 );
 
@@ -114,7 +115,7 @@ add_action( 'draft_banner_area', 'draft_banner' );
 
 function draft_social_media_icons()
 {
-    echo '<div class="col-12 text-right share">
+    echo '<div class="col-lg-3 mt-2 mb-0 text-right share">
             <ul>
                 <li class="facebook">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '" target="_blank">
@@ -140,20 +141,31 @@ add_action( 'after_article', 'draft_social_media_icons' );
 function draft_related_posts($tags = null)
 {
     $posts = new WP_Query(array( 'posts_per_page' => 3, 'tag_slug__in' => $tags, 'ignore_sticky_posts' => 1, 'orderby' => 'rand' )); ?>
-    <div class="related_posts row mb-4">
-        <h3 class="col-md-12 clear"><em>Posts</em> Recomendados</h3>
-        <?php while ($posts->have_posts()) : $posts->the_post(); ?>
-            <div class="col-sm-6 col-md-4 mb-2">
-                <div class="thumbnail">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(640, 360), array( 'class' => 'img-fluid' )); ?></a>
-                    <?php endif; ?>
-                    <div class="caption"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+    <div class="col-lg-12 mt-2 mb-4">
+        <h3>Posts <strong>Recomendados</strong></h3>
+        <div class="row">
+            <?php while ($posts->have_posts()) : $posts->the_post(); ?>
+                <div class="col-sm-6 col-md-4">
+                    <figure class="figure">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(640, 360), array( 'class' => 'figure-img img-fluid' )); ?></a>
+                        <?php endif; ?>
+                        <figcaption class="figure-caption"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></figcaption>
+                    </figure>
                 </div>
-            </div>
-        <?php endwhile; ?>
+            <?php endwhile; ?>
+        </div>
     </div>
 <?php wp_reset_postdata();
 }
 
 add_action( 'after_article', 'draft_related_posts' );
+
+function add_specific_menu_location_atts( $atts, $item, $args ) {
+    if( $args->theme_location == 'header' ) {
+      $atts['class'] = 'nav-link p-2';
+    }
+    return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'add_specific_menu_location_atts', 10, 3 );
