@@ -41,7 +41,7 @@
 	<div class="sidebar-widget mb-4">
 		<?php
 		$contador = 0;
-		$the_query = new WP_Query(array('category__in' => 2, 'posts_per_page' => 5));
+		$the_query = new WP_Query(array('category__in' => 25, 'posts_per_page' => 5));
 		if ($the_query->have_posts()) : ?>
 			<div class="section-call">
 				<h3>Últimas <strong>Análises</strong></h3>
