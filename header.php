@@ -56,31 +56,38 @@
 
 	<main>
 
-		<header class="container">
+		<header class="bg-light shadow-sm mb-4">
 
-			<div class="row">
+			<div class="container">
 
-				<div class="col-lg-4">
-					<section role="banner" class="mt-4 mb-4 text-left">
-						<?php if ( has_header_image() ) : ?>
-							<h1><a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
-						<?php elseif ( has_custom_logo() ) : ?>
-							<h1><?php the_custom_logo(); ?></h1>
-						<?php else : ?>
-							<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php endif; ?>
-					</section>
-				</div>
+				<div class="row">
 
-				<div class="col-lg-8">
-					<?php
-					wp_nav_menu( array(
-						'theme_location'  => 'header',
-						'depth'	          => 2,
-						'container'       => 'ul',
-						'menu_class' => 'nav nav-pills justify-content-end d-none d-lg-flex'
-					) );
-					?>
+					<div class="col-lg-12">
+
+						<section role="banner" class="mt-4 mb-4 text-center">
+							<?php if ( has_header_image() ) : ?>
+								<h1><a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" class="img-fluid" alt="<?php bloginfo( 'name' ); ?>" /></a></h1>
+							<?php elseif ( has_custom_logo() ) : ?>
+								<h1><?php the_custom_logo(); ?></h1>
+							<?php else : ?>
+								<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php endif; ?>
+						</section>
+
+						<section class="position-absolute d-none d-lg-block mt-3 social">
+							<?php
+							wp_nav_menu( array(
+								'theme_location'  => 'header',
+								'depth'	          => 0,
+								'container'       => 'ul',
+								'menu_class' => 'nav nav-pills justify-content-end d-lg-flex'
+							) );
+							?>
+							<span class="clearfix text-uppercase font-italic">Acompanhe o <strong>Blog</strong></span>
+						</section>
+
+					</div>
+
 				</div>
 
 			</div>

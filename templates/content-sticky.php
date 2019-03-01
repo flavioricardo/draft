@@ -9,7 +9,7 @@
 			<div class="d-inline-block"><?php the_category( ' ' ); ?></div>
 		</div>
 	</div>
-	<div class="card mb-4 shadow rounded-0">
+	<div class="card mb-4 shadow-sm rounded-0">
 		<?php if (has_post_thumbnail()) : ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail( 'large', array('class' => 'img-fluid flex-auto d-none d-lg-block') ); ?>

@@ -162,8 +162,17 @@ function draft_related_posts($tags = null)
 add_action( 'after_article', 'draft_related_posts' );
 
 function add_specific_menu_location_atts( $atts, $item, $args ) {
-    if( $args->theme_location == 'header' ) {
-      $atts['class'] = 'nav-link p-2';
+    if ( $args->theme_location == 'header' ) {
+        $atts['class'] = 'nav-link p-2';
+
+        if ( $item->post_title == 'Facebook' ) {
+            $atts['class'] = 'nav-link p-2 fab fa-facebook';
+        } else if ( $item->post_title == 'Instagram' ) {
+            $atts['class'] = 'nav-link p-2 fab fa-instagram';
+        } else if ( $item->post_title == 'Twitter' ) {
+            $atts['class'] = 'nav-link p-2 fab fa-twitter';
+        }
+
     }
     return $atts;
 }

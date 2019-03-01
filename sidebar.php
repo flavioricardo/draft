@@ -2,14 +2,13 @@
 
 	<div class="sidebar-widget mb-4">
 		<?php
-		$contador = 0;
 		$lancamentos = new WP_Query(array('posts_per_page' => 5, 'post_type' => 'lancamentos', 'orderby' => 'data_de_lancamento' ));
 		if ($lancamentos->have_posts()) : ?>
 			<div class="section-call">
 				<h3>Próximos <strong>Lançamentos</strong></h3>
 			</div>
 			<?php while ($lancamentos->have_posts()) : $lancamentos->the_post(); ?>
-				<div class="card shadow rounded-0 mb-3">
+				<div class="card shadow-sm rounded-0 mb-3">
 					<div class="row no-gutters">
 						<div class="col-md-4">
 							<a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>">
@@ -20,7 +19,14 @@
 							<div class="card-body">
 								<p class="card-title"><i class="fas fa-gamepad mr-2"></i><a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
 								<p class="card-text"><i class="fas fa-calendar-alt mr-2"></i><?php echo the_field('data_de_lancamento'); ?></p>
-								<p class="card-text"><i class="fas fa-building mr-2"></i><a href="<?php echo get_tag_link(get_field('empresa')); ?>" title="<?php the_title(); ?>"><?php echo get_tag(get_field('empresa'))->name; ?></a></h5>
+								<p class="card-text">
+									<i class="fas fa-desktop"></i>
+									<?php
+									foreach (get_field('plataformas') as $key => $plataforma) : ?>
+										<a class="d-inline-block" href="<?php echo get_tag_link($plataforma); ?>" title="<?php echo get_tag($plataforma)->name; ?>"><?php echo get_tag($plataforma)->name; ?></a><?php echo ($key < count(get_field('plataformas')) - 1) ? ',' : ''; ?>
+									<?php
+									endforeach; ?>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -39,7 +45,7 @@
 			<div class="section-call">
 				<h3>Últimas <strong>Análises</strong></h3>
 			</div>
-			<ul class="list-group shadow">
+			<ul class="list-group shadow-sm">
 			<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 				<?php if ($contador == 0) : ?>
 					<li class="list-group-item list-group-item-action rounded-0">

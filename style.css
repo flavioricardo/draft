@@ -40,6 +40,19 @@ nav .menu li {
 	display: inline-block;
 }
 
+.social {
+    right: 20px;
+	top: 0;
+}
+
+.nav-pills .nav-item .fab {
+	font-size: 0;
+}
+
+.nav-pills .nav-item .fab:before {
+	font-size: 2rem;
+}
+
 /*Article*/
 
 figure {
