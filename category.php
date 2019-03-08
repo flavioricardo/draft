@@ -6,7 +6,7 @@
 
 		<div class="card mb-4">
 			<div class="card-body">
-				<?php the_archive_title( '<h3>', '</h3>' ); ?>
+				<h3><?php single_cat_title(); ?></h3>
 				<?php the_archive_description(); ?>
 			</div>
 		</div>
