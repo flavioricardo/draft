@@ -6,14 +6,14 @@
 
 		<?php do_action( 'draft_banner_area' ); ?>
 
-		<?php if (have_posts()) : ?>
+		<?php if ( have_posts() ) : ?>
 			<?php $current_post = 0; ?>
 
 			<div class="section-call">
                 <h3>Últimas do <strong>Blog</strong></h3>
             </div>
 
-			<?php while (have_posts()) : the_post(); ?>
+			<?php while  ( have_posts() ) : the_post(); ?>
 				<?php if ($current_post == 0) : ?>
 					<?php get_template_part( 'templates/content', 'sticky' ); ?>
 				<?php else : ?>
