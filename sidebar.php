@@ -2,13 +2,13 @@
 
 	<div class="sidebar-widget mb-4">
 		<?php
-		$lancamentos = new WP_Query(array('posts_per_page' => 5, 'post_type' => 'lancamentos',
-		'meta_key' => 'data_de_lancamento', 'orderby' => 'meta_value', 'order' => 'ASC' ));
-		if ($lancamentos->have_posts()) : ?>
+		$lancamentos = new WP_Query( array( 'posts_per_page' => 5, 'post_type' => 'lancamentos',
+		'meta_key' => 'data_de_lancamento', 'orderby' => 'meta_value', 'order' => 'ASC' ) );
+		if ( $lancamentos->have_posts() ) : ?>
 			<div class="section-call">
 				<h3>Próximos <strong>Lançamentos</strong></h3>
 			</div>
-			<?php while ($lancamentos->have_posts()) : $lancamentos->the_post(); ?>
+			<?php while ( $lancamentos->have_posts() ) : $lancamentos->the_post(); ?>
 				<div class="card shadow-sm rounded-0 mb-3">
 					<div class="row no-gutters">
 						<div class="col-md-4">
@@ -40,15 +40,15 @@
 
 	<div class="sidebar-widget mb-4">
 		<?php
-		$contador = 0;
-		$the_query = new WP_Query(array('category__in' => 25, 'posts_per_page' => 5));
-		if ($the_query->have_posts()) : ?>
+		$current_post = 0;
+		$the_query = new WP_Query( array( 'category__in' => 25, 'posts_per_page' => 5 ) );
+		if ( $the_query->have_posts() ) : ?>
 			<div class="section-call">
 				<h3>Últimas <strong>Análises</strong></h3>
 			</div>
 			<ul class="list-group shadow-sm">
-			<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-				<?php if ($contador == 0) : ?>
+			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+				<?php if ($current_post == 0) : ?>
 					<li class="list-group-item list-group-item-action rounded-0">
 						<a class="card-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 							<?php the_post_thumbnail( 'large', array('class' => 'img-fluid flex-auto d-none d-lg-block mt-1 mb-2')); ?>
@@ -64,7 +64,7 @@
 					</li>
 				<?php endif; ?>
 			<?php
-			$contador++;
+			$current_post++;
 			endwhile; ?>
 			</ul>
 		<?php endif;
@@ -87,7 +87,7 @@
 		?>
     </div>
 
-    <div class="sidebar-widget mb-4">
+    <div class="sidebar-widget mb-4 d-none d-lg-block">
         <div class="section-call">
             <h3>Redes <strong>Sociais</strong></h3>
         </div>
