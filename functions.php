@@ -117,17 +117,17 @@ function draft_social_media_icons()
 {
     echo '<div class="col-lg-3 mt-2 mb-0 text-right share">
             <ul>
-                <li class="facebook">
+                <li class="facebook d-inline-block">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '" target="_blank">
                         <img src="' . get_template_directory_uri() . '/img/Facebook.png" alt="' . __( 'Share on Facebook', 'draft' ) .'" />
                     </a>
                 </li>
-                <li class="twitter">
+                <li class="twitter d-inline-block">
                     <a href="http://twitter.com/home?status=' . get_the_title() . '%20' . get_the_permalink() . '" target="_blank">
                         <img src="' . get_template_directory_uri() . '/img/Twitter.png" alt="' . __( 'Share on Twitter', 'draft' ) .'" />
                     </a>
                 </li>
-                <li class="whatsapp">
+                <li class="whatsapp d-inline-block d-lg-none">
                     <a href="whatsapp://send?text=' . get_the_title() . '%20' . get_the_permalink() . '">
                         <img src="' . get_template_directory_uri() . '/img/WhatsApp.png" alt="' . __( 'Share on WhatsApp', 'draft' ) .'" />
                     </a>

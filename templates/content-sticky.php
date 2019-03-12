@@ -1,5 +1,5 @@
 <article <?php post_class( 'blog-post col-12 p-0' ); ?>>
-	<div class="row mb-3">
+	<div class="row mb-3 d-none d-lg-flex">
 		<div class="col-6 d-none d-lg-inline-block">
 			<i class="fas fa-calendar-alt d-none d-lg-inline-block"></i>
 			<div class="d-inline-block">Por <?php the_author_posts_link(); ?> em <?php the_time( 'd/m/Y' ); ?></div>

@@ -71,14 +71,6 @@ article .share ul {
 	list-style: none;
 }
 
-article .share ul li {
-	display: inline-block;
-}
-
-article .share ul .whatsapp {
-	display: none;
-}
-
 article .share ul li a img {
 	height: 35px;
 	width: auto;
@@ -189,16 +181,12 @@ footer .menu li {
 /*Mobile rules*/
 
 @media (max-width: 576px) {
-	article .share ul .whatsapp {
-		display: inline-block;
+	.h3, h3 {
+		font-size: 1.5rem;
 	}
 }
 
-@media (max-width: 768px) {
-	main.container header nav {
-		display: none !important;
-	}
-}
+@media (max-width: 768px) {}
 
 @media (min-width: 992px) {}
 
