@@ -94,7 +94,7 @@
 			foreach ($campeonatos as $c => $campeonato) : ?>
 				<div class="tab-pane fade <?php echo ($c == 0) ? 'active show' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>" role="tabpanel" aria-labelledby="list-<?php echo $campeonato->slug; ?>-list">
 					<?php
-					$partidas = new WP_Query( array( 'posts_per_page' => 5, 'post_type' => 'partidas',
+					$partidas = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'partidas',
 					'meta_key' => 'data', 'orderby' => 'meta_value', 'order' => 'ASC',
 					'tax_query' => array( array ( 'taxonomy' => 'campeonatos', 'field' => 'slug', 'terms' => $campeonato->slug ) ) ) );
 					if ( $partidas->have_posts() ) :
@@ -114,7 +114,7 @@
 								</div>
 								<div class="col-3 align-self-center">
 									<?php $time_fora = get_field('time_fora'); ?>
-									<img src="<?php echo $time_fora['url']; ?>" class="img-fluid" alt="<?php echo $time_fora['alt']; ?>">
+									<img src="<?php echo $time_fora['url']; ?>" class="img-fluid" alt="<?php echo $time_fora['alt']; ?>" />
 								</div>
 							</div>
 						<?php
