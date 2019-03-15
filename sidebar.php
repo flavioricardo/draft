@@ -107,8 +107,9 @@
 									<h3 class="align-middle text-dark font-weight-bold m-0">x</h3>
 									<div class="d-block text-secondary">
 										<?php
+										setlocale(LC_ALL, "pt_BR", "pt_BR.iso-8859-1", "pt_BR.utf-8", "portuguese");
 										$data = explode('/', get_field('data'));
-										echo date('d F', strtotime("$data[2]-$data[1]-$data[0] 00:00:00")); ?>
+										echo ucfirst( strftime("%d de %B", strtotime("$data[2]-$data[1]-$data[0]") ) ); ?>
 									</div>
 									<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
 								</div>
@@ -130,7 +131,7 @@
         <div class="section-call">
             <h3>Sobre o <strong>Blog</strong></h3>
         </div>
-        <div class="excerpt">O Conversa de Sofá é um blog com notícias, dicas e tutoriais sobre jogos, análises e novidades sobre os últimos lançamentos e cobertura de eventos.</div>
+        <div class="excerpt"><?php bloginfo( 'description' ); ?></div>
         <?php
 		wp_nav_menu( array(
 			'theme_location'  => 'sidebar',
