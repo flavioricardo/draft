@@ -105,12 +105,7 @@
 								</div>
 								<div class="col-6 align-self-center">
 									<h3 class="align-middle text-dark font-weight-bold m-0">x</h3>
-									<div class="d-block text-secondary">
-										<?php
-										setlocale(LC_ALL, "pt_BR", "pt_BR.iso-8859-1", "pt_BR.utf-8", "portuguese");
-										$data = explode('/', get_field('data'));
-										echo strftime("%d de %B", strtotime("$data[2]-$data[1]-$data[0]")); ?>
-									</div>
+									<div class="d-block text-secondary"><?php the_field('data_exibicao'); ?></div>
 									<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
 								</div>
 								<div class="col-3 align-self-center">
