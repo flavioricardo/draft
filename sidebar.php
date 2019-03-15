@@ -13,7 +13,7 @@
 					<div class="row no-gutters">
 						<div class="col-md-4">
 							<a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>">
-								<?php the_post_thumbnail( 'small', array('class' => 'img-fluid flex-auto card-img rounded-0')); ?>
+								<?php the_post_thumbnail( 'small', array('class' => 'img-fluid flex-auto d-none d-lg-block card-img rounded-0')); ?>
 							</a>
 						</div>
 						<div class="col-md-8">
