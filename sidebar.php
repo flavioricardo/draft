@@ -109,7 +109,7 @@
 										<?php
 										setlocale(LC_ALL, "pt_BR", "pt_BR.iso-8859-1", "pt_BR.utf-8", "portuguese");
 										$data = explode('/', get_field('data'));
-										echo ucfirst( strftime("%d de %B", strtotime("$data[2]-$data[1]-$data[0]") ) ); ?>
+										echo strftime("%d de %B", strtotime("$data[2]-$data[1]-$data[0]")); ?>
 									</div>
 									<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
 								</div>
