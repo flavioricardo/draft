@@ -108,7 +108,9 @@
 									<h3 class="align-middle text-dark font-weight-bold m-0">x</h3>
 									<div class="d-block text-secondary"><?php the_field('data_exibicao'); ?></div>
 									<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
-									<div class="d-block text-secondary font-italic"><a href="<?php the_field('transmissao'); ?>">Transmissão</a></div>
+									<?php if (!empty(get_field('transmissao'))) : ?>
+										<div class="d-block text-secondary font-italic"><a href="<?php the_field('transmissao'); ?>">Transmissão</a></div>
+									<?php endif; ?>
 								</div>
 								<div class="col-3 align-self-center">
 									<?php $time_fora = get_field('time_fora'); ?>
