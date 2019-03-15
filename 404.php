@@ -2,7 +2,7 @@
 
 <div class="row">
 
-	<div class="col-8">
+	<div class="col-sm-12 col-lg-8">
 
 		<h2><?php _e( 'Not Found', 'draft' ); ?></h2>
 		<div><?php _e( 'Sorry, no posts matched your criteria.', 'draft' ); ?></div>

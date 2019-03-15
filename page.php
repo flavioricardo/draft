@@ -2,7 +2,7 @@
 
 <div class="row">
 
-	<div class="col-8">
+	<div class="col-sm-12 col-lg-8">
 
 		<?php if ( have_posts() ) : ?>
 			<?php while  ( have_posts() ) : the_post(); ?>

@@ -2,7 +2,7 @@
 
 <div class="row">
 
-	<div class="col-8">
+	<div class="col-sm-12 col-lg-8">
 
 		<div class="card mb-4">
 			<div class="card-body">

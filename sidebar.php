@@ -101,15 +101,18 @@
 						while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
 							<div class="row mt-2 text-center shadow-sm border m-0 pb-1">
 								<div class="col-3 align-self-center">
-									<img src="<?php the_field('time_casa'); ?>" class="img-fluid" alt="">
+									<?php $time_casa = get_field('time_casa'); ?>
+									<img src="<?php echo $time_casa['url']; ?>" class="img-fluid" alt="<?php echo $time_casa['alt']; ?>">
 								</div>
 								<div class="col-6 align-self-center">
 									<h3 class="align-middle text-dark font-weight-bold m-0">x</h3>
 									<div class="d-block text-secondary"><?php the_field('data_exibicao'); ?></div>
 									<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
+									<div class="d-block text-secondary"><a href="<?php the_field('transmissao'); ?>">Transmissão</a></div>
 								</div>
 								<div class="col-3 align-self-center">
-									<img src="<?php the_field('time_fora'); ?>" class="img-fluid" alt="">
+									<?php $time_fora = get_field('time_fora'); ?>
+									<img src="<?php echo $time_fora['url']; ?>" class="img-fluid" alt="<?php echo $time_fora['alt']; ?>">
 								</div>
 							</div>
 						<?php
