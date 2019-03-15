@@ -1,4 +1,4 @@
-<aside class="col-4">
+<aside class="col-sm-12 col-lg-4">
 
 	<div class="sidebar-widget mb-4">
 		<?php
@@ -74,7 +74,7 @@
 		?>
 	</div>
 
-	<div class="sidebar-widget mb-4 d-none d-lg-block">
+	<div class="sidebar-widget mb-4">
 		<div class="section-call">
 			<h3>Agenda <strong>eSports</strong></h3>
 		</div>

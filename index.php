@@ -2,7 +2,7 @@
 
 <div class="row">
 
-	<div class="col-8">
+	<div class="col-sm-12 col-lg-8">
 
 		<?php do_action( 'draft_banner_area' ); ?>
 
@@ -22,7 +22,7 @@
 				<?php $current_post++; ?>
 			<?php endwhile; ?>
 
-			<div class="navigation">
+			<div class="navigation mb-4">
 				<?php wp_pagenavi(); ?>
 			</div>
 
