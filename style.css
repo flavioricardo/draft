@@ -76,6 +76,12 @@ article .share ul li a img {
 	width: auto;
 }
 
+/*Sidebar*/
+
+.list-group-item.active {
+	background: #AF97BB;
+}
+
 /*Footer*/
 
 footer {

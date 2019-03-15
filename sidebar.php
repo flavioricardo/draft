@@ -33,8 +33,9 @@
 					</div>
 				</div>
 			<?php endwhile; ?>
-		<?php endif;
-		wp_reset_postdata();
+		<?php
+			wp_reset_postdata();
+		endif;
 		?>
 	</div>
 
@@ -67,49 +68,57 @@
 			$current_post++;
 			endwhile; ?>
 			</ul>
-		<?php endif;
-		wp_reset_postdata();
+		<?php
+			wp_reset_postdata();
+		endif;
 		?>
 	</div>
 
-	<div class="sidebar-widget mb-4">
+	<div class="sidebar-widget mb-4 d-none d-lg-block">
 		<div class="section-call">
-			<h3>Calendário <strong>eSports</strong></h3>
+			<h3>Agenda <strong>eSports</strong></h3>
 		</div>
-		<ul class="nav nav-pills" role="tablist">
-			<?php
-			$campeonatos = get_terms( array( 'taxonomy' => 'campeonatos', 'childless' => true ) );
-			foreach ($campeonatos as $campeonato) : ?>
-				<li class="nav-item">
-					<a class="nav-link" id="<?php echo $campeonato->slug; ?>-tab" data-toggle="tab" href="#<?php echo $campeonato->slug; ?>" role="tab" aria-controls="<?php echo $campeonato->slug; ?>" aria-selected="true"><?php echo $campeonato->name; ?></a>
-				</li>
-			<?php
-			endforeach; ?>
-		</ul>
+		<div class="card shadow-sm rounded-0">
+			<div class="list-group" role="tablist">
+				<?php
+				$campeonatos = get_terms( array( 'taxonomy' => 'campeonatos', 'childless' => true ) );
+				foreach ($campeonatos as $c => $campeonato) : ?>
+					<a class="list-group-item list-group-item-action rounded-0 border-0 <?php echo ($c == 0) ? 'active' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>-list" data-toggle="list" href="#list-<?php echo $campeonato->slug; ?>" role="tab" aria-controls="<?php echo $campeonato->slug; ?>"><?php echo $campeonato->name; ?></a>
+				<?php
+				endforeach; ?>
+			</div>
+		</div>
 		<div class="tab-content">
 			<?php
 			$campeonatos = get_terms( array( 'taxonomy' => 'campeonatos', 'childless' => true ) );
-			foreach ($campeonatos as $campeonato) : ?>
-				<div class="tab-pane fade" id="<?php echo $campeonato->slug; ?>" role="tabpanel" aria-labelledby="<?php echo $campeonato->slug; ?>-tab">
+			foreach ($campeonatos as $c => $campeonato) : ?>
+				<div class="tab-pane fade <?php echo ($c == 0) ? 'active show' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>" role="tabpanel" aria-labelledby="list-<?php echo $campeonato->slug; ?>-list">
 					<?php
 					$partidas = new WP_Query( array( 'posts_per_page' => 5, 'post_type' => 'partidas',
+					'meta_key' => 'data', 'orderby' => 'meta_value', 'order' => 'ASC',
 					'tax_query' => array( array ( 'taxonomy' => 'campeonatos', 'field' => 'slug', 'terms' => $campeonato->slug ) ) ) );
 					if ( $partidas->have_posts() ) :
 						while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
-							<div class="row">
-								<div class="col-5">
+							<div class="row mt-2 text-center shadow-sm border m-0 pb-1">
+								<div class="col-3 align-self-center">
 									<img src="<?php the_field('time_casa'); ?>" class="img-fluid" alt="">
 								</div>
-								<div class="col-2">
-									<?php the_field('etapa'); ?>
-									<?php the_field('data_e_hora'); ?>
+								<div class="col-6 align-self-center">
+									<h3 class="align-middle text-dark font-weight-bold m-0">x</h3>
+									<div class="d-block text-secondary">
+										<?php
+										$data = explode('/', get_field('data'));
+										echo date('d F', strtotime("$data[2]-$data[1]-$data[0] 00:00:00")); ?>
+									</div>
+									<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
 								</div>
-								<div class="col-5">
+								<div class="col-3 align-self-center">
 									<img src="<?php the_field('time_fora'); ?>" class="img-fluid" alt="">
 								</div>
 							</div>
 						<?php
 						endwhile;
+						wp_reset_postdata();
 					endif; ?>
 				</div>
 			<?php
