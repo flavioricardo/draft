@@ -115,7 +115,25 @@
 				<div class="tab-pane fade <?php echo ($c == 0) ? 'active show' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>" role="tabpanel" aria-labelledby="list-<?php echo $campeonato->slug; ?>-list">
 					<?php
 					$partidas = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'partidas',
-					'meta_key' => array( 'data', 'hora' ), 'orderby' => array( 'data' => 'ASC', 'hora' => 'ASC' ),
+
+					'meta_query' => array(
+						'relation' => 'AND',
+						'data' => array(
+							'key'     => 'data',
+							'compare' => 'EXISTS',
+						),
+						'hora' => array(
+							'key'     => 'hora',
+							'compare' => 'EXISTS',
+						),
+					),
+					'orderby' => array(
+						'data' => 'ASC',
+						'hora' => 'ASC',
+					),
+
+					// 'meta_key' => array( 'data', 'hora' ), 'orderby' => array( 'data' => 'ASC', 'hora' => 'ASC' ),
+
 					'tax_query' => array( array ( 'taxonomy' => 'campeonatos', 'field' => 'slug', 'terms' => $campeonato->slug ) ) ) );
 					if ( $partidas->have_posts() ) :
 						while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
