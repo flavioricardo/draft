@@ -2,7 +2,7 @@
 
 	<div class="sidebar-widget mb-4">
 		<?php
-		$lancamentos = new WP_Query( array( 'posts_per_page' => 5, 'post_type' => 'lancamentos',
+		$lancamentos = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'lancamentos',
 		'meta_key' => 'data_de_lancamento', 'orderby' => 'meta_value', 'order' => 'ASC' ) );
 		if ( $lancamentos->have_posts() ) : ?>
 			<div class="section-call">
