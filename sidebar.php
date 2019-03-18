@@ -2,8 +2,28 @@
 
 	<div class="sidebar-widget mb-4">
 		<?php
+		date_default_timezone_set( 'America/Sao_Paulo' );
+		$first_day_of_the_week = 'Sunday';
+		$start_of_the_week     = strtotime("Last $first_day_of_the_week");
+
+		if ( strtolower(date('l')) === strtolower($first_day_of_the_week) )
+			$start_of_the_week = strtotime('today');
+
+		$end_of_the_week = $start_of_the_week + (60 * 60 * 24 * 7) - 1;
+
+		$start_of_the_week = date('d/m/Y', $start_of_the_week);
+		$end_of_the_week = date('d/m/Y', $end_of_the_week);
+
 		$lancamentos = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'lancamentos',
-		'meta_key' => 'data_de_lancamento', 'orderby' => 'meta_value', 'order' => 'ASC' ) );
+		'meta_key' => 'data_de_lancamento', 'orderby' => 'meta_value', 'order' => 'ASC',
+		'meta_query' => array(
+			array(
+				'key' => 'data_de_lancamento',
+				'value' => array($start_of_the_week, $end_of_the_week),
+				'compare' => 'BETWEEN'
+			)
+		) ) );
+
 		if ( $lancamentos->have_posts() ) : ?>
 			<div class="section-call">
 				<h3>Próximos <strong>Lançamentos</strong></h3>
