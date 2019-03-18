@@ -62,7 +62,7 @@
 	<div class="sidebar-widget mb-4">
 		<?php
 		$current_post = 0;
-		$analises = new WP_Query( array( 'category__in' => 25, 'posts_per_page' => 5 ) );
+		$analises = new WP_Query( array( 'category__in' => 25, 'posts_per_page' => 6 ) );
 		if ( $analises->have_posts() ) : ?>
 			<div class="section-call">
 				<h3>Últimas <strong>Análises</strong></h3>
@@ -115,7 +115,7 @@
 				<div class="tab-pane fade <?php echo ($c == 0) ? 'active show' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>" role="tabpanel" aria-labelledby="list-<?php echo $campeonato->slug; ?>-list">
 					<?php
 					$partidas = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'partidas',
-					'meta_key' => 'data', 'orderby' => 'meta_value', 'order' => 'ASC',
+					'meta_key' => 'data', 'orderby' => array( 'meta_value' => 'ASC', 'horario' => 'ASC' ),
 					'tax_query' => array( array ( 'taxonomy' => 'campeonatos', 'field' => 'slug', 'terms' => $campeonato->slug ) ) ) );
 					if ( $partidas->have_posts() ) :
 						while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
