@@ -125,6 +125,11 @@
 							'key'     => 'hora',
 							'compare' => 'EXISTS',
 						),
+						'data' => array(
+							'key' => 'data',
+							'value' => array($start_of_the_week, $end_of_the_week),
+							'compare' => 'BETWEEN'
+						)
 					),
 					'orderby' => array(
 						'data' => 'ASC',
