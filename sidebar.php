@@ -103,7 +103,7 @@
 			$jogos = get_terms( array( 'taxonomy' => 'campeonatos', 'parent' => false, 'hide_empty' => true ) );
 			foreach ($jogos as $j => $jogo) : ?>
 				<li class="nav-item">
-					<a class="nav-link <?php echo ($j == 0) ? 'active' : ''; ?>" id="<?php echo $jogo->slug; ?>-tab" data-toggle="tab" href="#<?php echo $jogo->slug; ?>" role="tab" aria-controls="<?php echo $jogo->slug; ?>" aria-selected="true"><?php echo $jogo->name; ?></a>
+					<a class="nav-link rounded-0 <?php echo ($j == 0) ? 'active' : ''; ?>" id="<?php echo $jogo->slug; ?>-tab" data-toggle="tab" href="#<?php echo $jogo->slug; ?>" role="tab" aria-controls="<?php echo $jogo->slug; ?>" aria-selected="true"><?php echo $jogo->name; ?></a>
 				</li>
 			<?php
 			endforeach; ?>
