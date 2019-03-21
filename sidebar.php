@@ -98,68 +98,85 @@
 		<div class="section-call">
 			<h3>Agenda <strong>eSports</strong></h3>
 		</div>
-		<div class="card shadow-sm rounded-0">
-			<div class="list-group" role="tablist">
-				<?php
-				$campeonatos = get_terms( array( 'taxonomy' => 'campeonatos', 'childless' => true ) );
-				foreach ($campeonatos as $c => $campeonato) : ?>
-					<a class="list-group-item list-group-item-action rounded-0 border-0 <?php echo ($c == 0) ? 'active' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>-list" data-toggle="list" href="#list-<?php echo $campeonato->slug; ?>" role="tab" aria-controls="<?php echo $campeonato->slug; ?>"><?php echo $campeonato->name; ?></a>
-				<?php
-				endforeach; ?>
-			</div>
-		</div>
+		<ul class="nav nav-tabs border-bottom-0" role="tablist">
+			<?php
+			$jogos = get_terms( array( 'taxonomy' => 'campeonatos', 'parent' => false, 'hide_empty' => true ) );
+			foreach ($jogos as $j => $jogo) : ?>
+				<li class="nav-item">
+					<a class="nav-link <?php echo ($j == 0) ? 'active' : ''; ?>" id="<?php echo $jogo->slug; ?>-tab" data-toggle="tab" href="#<?php echo $jogo->slug; ?>" role="tab" aria-controls="<?php echo $jogo->slug; ?>" aria-selected="true"><?php echo $jogo->name; ?></a>
+				</li>
+			<?php
+			endforeach; ?>
+		</ul>
 		<div class="tab-content">
 			<?php
-			$campeonatos = get_terms( array( 'taxonomy' => 'campeonatos', 'childless' => true ) );
-			foreach ($campeonatos as $c => $campeonato) : ?>
-				<div class="tab-pane fade <?php echo ($c == 0) ? 'active show' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>" role="tabpanel" aria-labelledby="list-<?php echo $campeonato->slug; ?>-list">
-					<?php
-					$partidas = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'partidas',
-					'meta_query' => array(
-						'relation' => 'AND',
-						'data' => array(
-							'key'     => 'data',
-							'compare' => 'EXISTS',
-						),
-						'hora' => array(
-							'key'     => 'hora',
-							'compare' => 'EXISTS',
-						),
-						'data' => array(
-							'key' => 'data',
-							'value' => array($start_of_the_week, $end_of_the_week),
-							'compare' => 'BETWEEN'
-						)
-					),
-					'orderby' => array(
-						'data' => 'ASC',
-						'hora' => 'ASC',
-					),
-					'tax_query' => array( array ( 'taxonomy' => 'campeonatos', 'field' => 'slug', 'terms' => $campeonato->slug ) ) ) );
-					if ( $partidas->have_posts() ) :
-						while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
-							<div class="row mt-2 text-center shadow-sm border m-0 pb-1">
-								<div class="col-3 align-self-center">
-									<?php $time_casa = get_field('time_casa'); ?>
-									<img src="<?php echo $time_casa['url']; ?>" class="img-fluid" alt="<?php echo $time_casa['alt']; ?>">
-								</div>
-								<div class="col-6 align-self-center">
-									<h3 class="align-middle text-dark font-weight-bold m-0">x</h3>
-									<div class="d-block text-secondary"><?php the_field('data_exibicao'); ?></div>
-									<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
-									<?php if (!empty(get_field('transmissao'))) : ?>
-										<div class="d-block text-secondary font-italic"><a href="<?php the_field('transmissao'); ?>">Transmissão</a></div>
-									<?php endif; ?>
-								</div>
-								<div class="col-3 align-self-center">
-									<?php $time_fora = get_field('time_fora'); ?>
-									<img src="<?php echo $time_fora['url']; ?>" class="img-fluid" alt="<?php echo $time_fora['alt']; ?>" />
-								</div>
+			foreach ($jogos as $j => $jogo) : ?>
+				<div class="tab-pane fade <?php echo ($j == 0) ? 'active show' : ''; ?>" id="<?php echo $jogo->slug; ?>" role="tabpanel" aria-labelledby="<?php echo $jogo->slug; ?>-tab">
+					<div class="card shadow-sm rounded-0">
+						<div class="list-group" role="tablist">
+							<?php
+							$campeonatos = get_terms( array( 'taxonomy' => 'campeonatos', 'childless' => true, 'child_of' => $jogo->term_id, 'hide_empty' => true ) );
+							foreach ($campeonatos as $c => $campeonato) : ?>
+								<a class="list-group-item list-group-item-action rounded-0 border-0 <?php echo ($c == 0) ? 'active' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>-list" data-toggle="list" href="#list-<?php echo $campeonato->slug; ?>" role="tab" aria-controls="<?php echo $campeonato->slug; ?>"><?php echo $campeonato->name; ?></a>
+							<?php
+							endforeach; ?>
+						</div>
+					</div>
+					<div class="tab-content">
+						<?php
+						foreach ($campeonatos as $c => $campeonato) : ?>
+							<div class="tab-pane fade <?php echo ($c == 0) ? 'active show' : ''; ?>" id="list-<?php echo $campeonato->slug; ?>" role="tabpanel" aria-labelledby="list-<?php echo $campeonato->slug; ?>-list">
+								<?php
+								$partidas = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'partidas',
+								'meta_query' => array(
+									'relation' => 'AND',
+									'data' => array(
+										'key'     => 'data',
+										'compare' => 'EXISTS',
+									),
+									'hora' => array(
+										'key'     => 'hora',
+										'compare' => 'EXISTS',
+									),
+									'data' => array(
+										'key' => 'data',
+										'value' => array($start_of_the_week, $end_of_the_week),
+										'compare' => 'BETWEEN'
+									)
+								),
+								'orderby' => array(
+									'data' => 'ASC',
+									'hora' => 'ASC',
+								),
+								'tax_query' => array( array ( 'taxonomy' => 'campeonatos', 'field' => 'slug', 'terms' => $campeonato->slug ) ) ) );
+								if ( $partidas->have_posts() ) :
+									while ( $partidas->have_posts() ) : $partidas->the_post(); ?>
+										<div class="row mt-2 text-center shadow-sm border m-0 pb-1">
+											<div class="col-3 align-self-center">
+												<?php $time_casa = get_field('time_casa'); ?>
+												<img src="<?php echo $time_casa['url']; ?>" class="img-fluid" alt="<?php echo $time_casa['alt']; ?>">
+											</div>
+											<div class="col-6 align-self-center">
+												<h3 class="align-middle text-dark font-weight-bold m-0">x</h3>
+												<div class="d-block text-secondary"><?php the_field('data_exibicao'); ?></div>
+												<div class="d-block text-secondary"><?php the_field('hora'); ?></div>
+												<?php if (!empty(get_field('transmissao'))) : ?>
+													<div class="d-block text-secondary font-italic"><a href="<?php the_field('transmissao'); ?>">Transmissão</a></div>
+												<?php endif; ?>
+											</div>
+											<div class="col-3 align-self-center">
+												<?php $time_fora = get_field('time_fora'); ?>
+												<img src="<?php echo $time_fora['url']; ?>" class="img-fluid" alt="<?php echo $time_fora['alt']; ?>" />
+											</div>
+										</div>
+									<?php
+									endwhile;
+									wp_reset_postdata();
+								endif; ?>
 							</div>
 						<?php
-						endwhile;
-						wp_reset_postdata();
-					endif; ?>
+						endforeach; ?>
+					</div>
 				</div>
 			<?php
 			endforeach; ?>

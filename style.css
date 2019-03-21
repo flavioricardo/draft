@@ -163,25 +163,9 @@ footer .menu li {
 
 /*Required rules*/
 
-.wp-caption{}
-
 .wp-caption-text{
 	font-style: italic;
 }
-
-.sticky{}
-
-.screen-reader-text{}
-
-.gallery-caption{}
-
-.bypostauthor{}
-
-.alignright{}
-
-.alignleft{}
-
-.aligncenter{}
 
 /*Mobile rules*/
 
