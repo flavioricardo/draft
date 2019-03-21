@@ -3,7 +3,7 @@
 	<div class="sidebar-widget mb-4">
 		<?php
 		date_default_timezone_set( 'America/Sao_Paulo' );
-		$first_day_of_the_week = 'Sunday';
+		$first_day_of_the_week = 'Monday';
 		$start_of_the_week     = strtotime("Last $first_day_of_the_week");
 
 		if ( strtolower(date('l')) === strtolower($first_day_of_the_week) )
