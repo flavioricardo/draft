@@ -11,8 +11,8 @@
 
 		$end_of_the_week = $start_of_the_week + (60 * 60 * 24 * 7) - 1;
 
-		$start_of_the_week = date('d/m/Y', $start_of_the_week);
-		$end_of_the_week = date('d/m/Y', $end_of_the_week);
+		$start_of_the_week = date('Ymd', $start_of_the_week);
+		$end_of_the_week = date('Ymd', $end_of_the_week);
 
 		$lancamentos = new WP_Query( array( 'posts_per_page' => -1, 'post_type' => 'lancamentos',
 		'meta_key' => 'data_de_lancamento', 'orderby' => 'meta_value', 'order' => 'ASC',
