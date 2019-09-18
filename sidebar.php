@@ -198,13 +198,6 @@
 		?>
     </div>
 
-    <div class="sidebar-widget mb-4 d-none d-lg-block">
-        <div class="section-call">
-            <h3>Redes <strong>Sociais</strong></h3>
-        </div>
-        <div class="fb-page" data-href="https://www.facebook.com/conversadesofa" data-height="260" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/conversadesofa"><a href="https://www.facebook.com/conversadesofa">Conversa de Sofá</a></blockquote></div></div>
-    </div>
-
 	<div class="sidebar-widget">
 		<?php if ( is_active_sidebar( 'sidebar-1' ) && !is_single() ) : ?>
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
