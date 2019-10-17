@@ -33,13 +33,13 @@
 					<div class="row no-gutters">
 						<div class="col-md-4">
 							<a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>">
-								<?php the_post_thumbnail( 'small', array('class' => 'img-fluid flex-auto d-none d-lg-block card-img rounded-0')); ?>
+								<?php the_post_thumbnail( 'small', array('class' => 'img-fluid flex-auto d-none d-lg-block card-img rounded-0 h-100')); ?>
 							</a>
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
 								<p class="card-title"><i class="fas fa-gamepad mr-2"></i><a href="<?php echo get_tag_link(get_field('tag_do_jogo')); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
-								<p class="card-text"><i class="fas fa-calendar-alt mr-2"></i><?php echo date_format(date_create(get_field('data_de_lancamento')), 'd/M'); ?></p>
+								<p class="card-text"><i class="fas fa-calendar-alt mr-2"></i><?php echo date_format(date_create(get_field('data_de_lancamento'), 'America/Sao_Paulo'), 'd/M'); ?></p>
 								<p class="card-text">
 									<i class="fas fa-desktop"></i>
 									<?php
