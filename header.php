@@ -83,7 +83,7 @@
 								'menu_class' => 'nav nav-pills justify-content-end d-lg-flex'
 							) );
 							?>
-							<span class="clearfix text-uppercase font-italic">Acompanhe o <strong>Blog</strong></span>
+							<span class="clearfix text-uppercase font-italic">Acompanhe o <strong>Site</strong></span>
 						</section>
 
 					</div>

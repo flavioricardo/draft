@@ -10,7 +10,7 @@
 			<?php $current_post = 0; ?>
 
 			<div class="section-call">
-                <h3>Últimas do <strong>Blog</strong></h3>
+                <h3>Últimas do <strong>Site</strong></h3>
             </div>
 
 			<?php while  ( have_posts() ) : the_post(); ?>

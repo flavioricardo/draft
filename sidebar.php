@@ -185,7 +185,7 @@
 
 	<div class="sidebar-widget mb-4">
         <div class="section-call">
-            <h3>Sobre o <strong>Blog</strong></h3>
+            <h3>Sobre o <strong>Site</strong></h3>
         </div>
         <div class="excerpt"><?php bloginfo( 'description' ); ?></div>
         <?php
