@@ -168,7 +168,7 @@ footer .menu li {
 }
 
 .darkmode-ignore {
-  display: block;
+  mix-blend-mode: normal;
 }
 
 /*Mobile rules*/
