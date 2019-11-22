@@ -42,7 +42,7 @@
 
 	<div class="row d-none d-lg-flex mb-4 shadow-sm pt-2 pb-3 align-middle">
 		<div class="col-lg-2 mt-2">
-			<?php echo get_avatar(get_the_author_meta('ID'), 90, $default = '', get_the_author_meta('display_name'), array('class' => array('avatar'))); ?>
+			<?php echo get_avatar(get_the_author_meta('ID'), 90, $default = '', get_the_author_meta('display_name')); ?>
 		</div>
 		<div class="col-lg-10">
 			<?php $display_name = explode(' ', get_the_author_meta('display_name')); ?>
