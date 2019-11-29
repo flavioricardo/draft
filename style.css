@@ -45,6 +45,11 @@ nav .menu li {
   top: 0;
 }
 
+.fab {
+  font-display: swap;
+  font-size: 0;
+}
+
 .nav-pills .nav-item .fab {
   font-size: 0;
 }
