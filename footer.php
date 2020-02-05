@@ -10,8 +10,9 @@
 
 	</main>
 
+	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.4/lib/darkmode-js.min.js"></script>
 	<script>
-		new Darkmode().showWidget();
+	new Darkmode().showWidget();
 	</script>
 
 	<?php wp_footer(); ?>

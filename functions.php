@@ -96,7 +96,6 @@ function draft_load_scripts()
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '4.1.3', 'all');
     wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array('jquery'), '4.1.3', true);
     wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array('jquery'), '4.1.3', true);
-    wp_enqueue_script( 'darkmode', 'https://cdn.jsdelivr.net/npm/darkmode-js@1.5.4/lib/darkmode-js.min.js', array(), '1.5.4', true);
 
     wp_enqueue_style( 'style', get_bloginfo( 'stylesheet_url' ), array(), '1.0.0', 'all');
 }
