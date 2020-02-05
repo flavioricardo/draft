@@ -172,11 +172,6 @@ footer .menu li {
   font-style: italic;
 }
 
-.darkmode-ignore {
-  isolation: isolate !important;
-  mix-blend-mode: normal !important;
-}
-
 /*Mobile rules*/
 
 @media (max-width: 576px) {
