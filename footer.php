@@ -10,7 +10,7 @@
 
 	</main>
 
-	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.4/lib/darkmode-js.min.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.4/lib/darkmode-js.min.js"></script> -->
 	<script>
 		var options = {
 			// bottom: '64px', // default: '32px'
@@ -25,7 +25,7 @@
 			label: '🌓', // default: ''
 			// autoMatchOsTheme: true // default: true
 		};
-		new Darkmode(options).showWidget();
+		// new Darkmode(options).showWidget();
 	</script>
 
 	<?php wp_footer(); ?>
