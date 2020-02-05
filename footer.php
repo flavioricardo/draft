@@ -10,6 +10,10 @@
 
 	</main>
 
+	<script>
+		new Darkmode().showWidget();
+	</script>
+
 	<?php wp_footer(); ?>
 </body>
 </html>
