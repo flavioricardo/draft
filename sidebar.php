@@ -1,6 +1,6 @@
 <aside class="col-sm-12 col-lg-4">
 
-	<div class="sidebar-widget mb-4">
+	<!-- <div class="sidebar-widget mb-4">
 		<?php
 		date_default_timezone_set( 'America/Sao_Paulo' );
 		$first_day_of_the_week = 'Monday';
@@ -57,7 +57,7 @@
 			wp_reset_postdata();
 		endif;
 		?>
-	</div>
+	</div> -->
 
 	<div class="sidebar-widget mb-4">
 		<?php
@@ -94,7 +94,7 @@
 		?>
 	</div>
 
-	<div class="sidebar-widget mb-4">
+	<!-- <div class="sidebar-widget mb-4">
 		<div class="section-call">
 			<h3>Agenda <strong>eSports</strong></h3>
 		</div>
@@ -181,7 +181,7 @@
 			<?php
 			endforeach; ?>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="sidebar-widget mb-4">
         <div class="section-call">
